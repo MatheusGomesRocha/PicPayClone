@@ -35,3 +35,15 @@ export const DefaultBtn = styled.TouchableHighlight`
     justify-content: center;
     margin: 0 7px;
 `;
+
+
+export const SubHeader = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 60px;
+    padding: 0 10px;
+    borderBottomColor: #ccc;
+    borderBottomWidth: 1px; 
+`;

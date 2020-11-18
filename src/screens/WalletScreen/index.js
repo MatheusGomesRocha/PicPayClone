@@ -1,16 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import {Switch} from 'react-native';
 
 import {
     Container,
 
+    DefaultText,
+
     Header,
     TextBlock,
-    DefaultText,
     BtnBlock,
     DefaultBtn,
+
+    SubHeader,
 } from './styled';
 
 export default () => {
+    const [payWithAccount, setPayWithAccount] = useState(false);
+
     return (
         <Container>
             <Header>
@@ -30,6 +37,11 @@ export default () => {
                     </DefaultBtn>
                 </BtnBlock>
             </Header>
+
+            <SubHeader>
+                <DefaultText font="16px" mTop="0px" color="#000">Usar saldo a pagar</DefaultText>
+                <Switch trackColor={payWithAccount ? '#00AC4A' : '#ccc'} thumbColor={payWithAccount ? '#00AC4A' : '#ccc'} value={payWithAccount} onChange={() => setPayWithAccount(!payWithAccount)} />
+            </SubHeader>
         </Container>
     );
 }

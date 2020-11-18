@@ -48,7 +48,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
             <Touch key={index} onPress={() => goTo('home')}>
                 <>
                     {state.index == 0 ?
-                        <HomeFullIcon width="28" height="28" fill="#65px" />
+                        <HomeFullIcon width="28" height="28" fill="#026731" />
                         :
                         <HomeIcon width="28" height="28" fill="#4d565b" />
                     }

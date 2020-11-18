@@ -1,40 +1,43 @@
 import React from 'react';
 import styled from 'styled-components/native';
-// import HomeIcon from '../assets/svg/home.svg';
-// import SearchIcon from '../assets/svg/search.svg';
-// import TodayIcon from '../assets/svg/today.svg';
-// import FavoriteIcon from '../assets/svg/favorite.svg';
-// import AccountIcon from '../assets/svg/account.svg';
+import HomeIcon from '../assets/svg/home.svg';
+import HomeFullIcon from '../assets/svg/home_full.svg';
+import WalletIcon from '../assets/svg/wallet.svg';
+import WalletFullIcon from '../assets/svg/wallet_full.svg';
+import PayIcon from '../assets/svg/dollar.svg';
+import BellIcon from '../assets/svg/bell.svg';
+import BellFullIcon from '../assets/svg/bell_full.svg';
+import ConfigIcon from '../assets/svg/config.svg';
+import ConfigFullIcon from '../assets/svg/config_full.svg';
 
-
-const Div = styled.View `
+const Div = styled.View`
     flex-direction: row;
     background-color: #fff;
 `;
 
 const Texto = styled.Text`
     font-size: 10px;
-    color: ${props=>props.color || '#6E7678'};
+    color: ${props => props.color || '#6E7678'};
 `;
 
-const Touch = styled.TouchableOpacity `
+const Touch = styled.TouchableOpacity`
     flex: 1;
     justify-content: center;
     align-items: center;
     height: 70px;
 `;
 
-const TouchCenter = styled.TouchableHighlight `
+const TouchCenter = styled.TouchableHighlight`
     width: 70px;
     height: 70px;
-    background-color: #109E4D;
+    background-color: ${props=>props.bgColor || '#00AC4A'};
     justify-content: center;
     align-items: center;
     margin-top: -20px;
     border-radius: 35px;
 `;
 
-export default ({state, descriptors, navigation, index}) => {          /** Props que vem para facilitar a customização */
+export default ({ state, descriptors, navigation, index }) => {          /** Props que vem para facilitar a customização */
 
     const goTo = (screen) => {          // function que pega o nome da screen enviada dependendo da Tab que o usuário clicou
         navigation.navigate(screen);
@@ -43,28 +46,54 @@ export default ({state, descriptors, navigation, index}) => {          /** Props
     return (
         <Div>
             <Touch key={index} onPress={() => goTo('home')}>
-                <Texto>Inicio</Texto>
-                {/* <HomeIcon style={{opacity: state.index === 0 ? 1 : 0.5}} width="28" height="28" fill="#fff" /> */}
+                <>
+                    {state.index == 0 ?
+                        <HomeFullIcon width="28" height="28" fill="#026731" />
+                        :
+                        <HomeIcon width="28" height="28" fill="#4d565b" />
+                    }
+                    <Texto color={state.index == 0 && '#026731'}>Inicio</Texto>
+                </>
             </Touch>
 
             <Touch key={index} onPress={() => goTo('wallet')}>
-            <Texto>Carteira</Texto>
-                {/* <SearchIcon style={{opacity: state.index === 1 ? 1 : 0.5}} width="28" height="28" fill="#fff" /> */}
+                <>
+                    {state.index == 1 ?
+                        <WalletFullIcon width="28" height="28" fill="#026731" />
+                        :
+                        <WalletIcon width="28" height="28" fill="#4d565b" />
+                    }
+                    <Texto color={state.index == 1 && '#026731'}>Carteira</Texto>
+                </>
             </Touch>
 
-            <TouchCenter underlayColor="rgba(255, 255, 255, 0.9)" key={index} onPress={() => goTo('pay')}>
-            <Texto color="#fff">Pagar</Texto>
-                {/* <TodayIcon width="32" height="32" fill="#0096C7" /> */}
+            <TouchCenter bgColor={state.index == 2 && '#026731'} underlayColor="#026731" key={index} onPress={() => goTo('pay')}>
+                <>
+                    <PayIcon width="28" height="28" fill="#fff" />
+                    <Texto color="#fff">Pagar</Texto>
+                </>
             </TouchCenter>
 
             <Touch key={index} onPress={() => goTo('notification')}>
-            <Texto>Notificações</Texto>
-                {/* <FavoriteIcon style={{opacity: state.index === 3 ? 1 : 0.5}} width="28" height="28" fill="#fff" /> */}
+                <>
+                    {state.index == 3 ?
+                        <BellFullIcon width="28" height="28" fill="#026731" />
+                        :
+                        <BellIcon width="28" height="28" fill="#4d565b" />
+                    }
+                    <Texto color={state.index == 3 && '#026731'}>Notificações</Texto>
+                </>
             </Touch>
 
             <Touch key={index} onPress={() => goTo('config')}>
-            <Texto>Ajustes</Texto>
-                {/* <AccountIcon style={{opacity: state.index === 4 ? 1 : 0.5}} width="28" height="28" fill="#fff" /> */}
+                <>
+                    {state.index == 4 ?
+                        <ConfigFullIcon width="28" height="28" fill="#026731" />
+                        :
+                        <ConfigIcon width="28" height="28" fill="#4d565b" />
+                    }
+                    <Texto color={state.index == 4 && '#026731'}>Ajustes</Texto>
+                </>
             </Touch>
         </Div>
     );

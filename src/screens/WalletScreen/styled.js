@@ -6,7 +6,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Header = styled.View`
-    background-color: ${primary};
+    background-color: ${props=>props.bgColor};
     align-items: center;
     justify-content: center;
     height: 260px;

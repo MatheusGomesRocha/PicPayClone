@@ -20,7 +20,7 @@ export default () => {
 
     return (
         <Container>
-            <Header>
+            <Header bgColor={payWithAccount ? '#00AC4A' : '#ccc'}>
                 <TextBlock>
                     <DefaultText mTop="-10px" color="#fff">Saldo PicPay</DefaultText>
                     <DefaultText font="35px" color="#fff">R$ 32,48</DefaultText>
@@ -40,7 +40,7 @@ export default () => {
 
             <SubHeader>
                 <DefaultText font="16px" mTop="0px" color="#000">Usar saldo a pagar</DefaultText>
-                <Switch trackColor={payWithAccount ? '#00AC4A' : '#ccc'} thumbColor={payWithAccount ? '#00AC4A' : '#ccc'} value={payWithAccount} onChange={() => setPayWithAccount(!payWithAccount)} />
+                <Switch thumbColor={payWithAccount ? '#00AC4A' : '#eee'} value={payWithAccount} onChange={() => setPayWithAccount(!payWithAccount)} />
             </SubHeader>
         </Container>
     );

@@ -28,12 +28,12 @@ const Touch = styled.TouchableOpacity`
 `;
 
 const TouchCenter = styled.TouchableHighlight`
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     background-color: ${props=>props.bgColor || '#00AC4A'};
     justify-content: center;
     align-items: center;
-    margin-top: -20px;
+    margin-top: -10px;
     border-radius: 35px;
 `;
 
@@ -48,7 +48,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
             <Touch key={index} onPress={() => goTo('home')}>
                 <>
                     {state.index == 0 ?
-                        <HomeFullIcon width="28" height="28" fill="#026731" />
+                        <HomeFullIcon width="28" height="28" fill="#65px" />
                         :
                         <HomeIcon width="28" height="28" fill="#4d565b" />
                     }

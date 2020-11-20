@@ -54,7 +54,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
                         :
                         <HomeIcon width="25" height="25" fill="#4d565b" />
                     }
-                    <Texto color={state.index == 0 && '#1fa1c7'}>Inicio</Texto>
+                    <Texto color={state.index == 0 && '#1fa1c7'}>Home</Texto>
                 </>
             </Touch>
 
@@ -65,14 +65,14 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
                         :
                         <WalletIcon width="25" height="25" fill="#4d565b" />
                     }
-                    <Texto color={state.index == 1 && '#1fa1c7'}>Carteira</Texto>
+                    <Texto color={state.index == 1 && '#1fa1c7'}>Wallet</Texto>
                 </>
             </Touch>
 
             <TouchCenter bgColor={state.index == 2 && '#1fa1c7'} underlayColor="#1fa1c7" key={index} onPress={() => goTo('pay')}>
                 <>
                     <PayIcon width="25" height="25" fill="#fff" />
-                    <Texto color="#fff">Pagar</Texto>
+                    <Texto color="#fff">Pay</Texto>
                 </>
             </TouchCenter>
 
@@ -83,7 +83,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
                         :
                         <BellIcon width="25" height="25" fill="#4d565b" />
                     }
-                    <Texto color={state.index == 3 && '#1fa1c7'}>Notificações</Texto>
+                    <Texto color={state.index == 3 && '#1fa1c7'}>Notification</Texto>
                 </>
             </Touch>
 
@@ -94,7 +94,7 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
                         :
                         <ConfigIcon width="25" height="25" fill="#4d565b" />
                     }
-                    <Texto color={state.index == 4 && '#1fa1c7'}>Ajustes</Texto>
+                    <Texto color={state.index == 4 && '#1fa1c7'}>Config</Texto>
                 </>
             </Touch>
         </Div>

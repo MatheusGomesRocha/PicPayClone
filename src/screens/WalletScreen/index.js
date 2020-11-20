@@ -72,23 +72,23 @@ export default () => {
             <Animated.View style={{ backgroundColor: boxInterpolation }}>
                 <Header>
                     <TextBlock>
-                        <DefaultText mTop="-10px" color="#fff">Saldo Bankidô</DefaultText>
+                        <DefaultText mTop="-10px" color="#fff">Balance Bankidô</DefaultText>
                         <DefaultText mTop="7px" font="35px" color="#fff">R$ 32,48</DefaultText>
-                        <DefaultText mTop="7px">Seu saldo rende 210% de CDI</DefaultText>
+                        <DefaultText mTop="7px">Your balance yields 210% CDI</DefaultText>
                     </TextBlock>
 
                     <BtnBlock>
                         <DefaultBtn underlayColor="#ccc" onPress={() => console.log('add')}>
                             <>
                                 <PhoneIcon width="20px" height="20px" fill="#fff" />
-                                <DefaultText mLeft="10px" color="#fff">Adicionar</DefaultText>
+                                <DefaultText mLeft="10px" color="#fff">Add cash</DefaultText>
                             </>
                         </DefaultBtn>
 
                         <DefaultBtn underlayColor="#ccc" onPress={() => console.log('Retirar')}>
                             <>
                                 <BankIcon width="20px" height="20px" fill="#fff" />
-                                <DefaultText mLeft="10px" color="#fff">Retirar</DefaultText>
+                                <DefaultText mLeft="10px" color="#fff">Withdraw</DefaultText>
                             </>
                         </DefaultBtn>
                     </BtnBlock>
@@ -96,32 +96,32 @@ export default () => {
             </Animated.View >
 
             <SubHeader>
-                <DefaultText font="16px" mTop="0px" color="#000">Usar saldo a pagar</DefaultText>
+                <DefaultText font="16px" mTop="0px" color="#000">Use balance to pay</DefaultText>
                 <Switch thumbColor={payWithAccount ? '#5ad2f4' : '#eee'} value={payWithAccount} onChange={handleAnimation} />
             </SubHeader>
 
             <MainContent>
-                <DefaultText color="#999" mTop="20px">Formas de pagamento</DefaultText>
+                <DefaultText color="#999" mTop="20px">Payments methods</DefaultText>
 
                 <CardView mTop="10px" height="60px">
                     <LeftView>
                         <CardIcon width="45px" height="45px" />
                         <LeftBlock>
                             <DefaultText color="#000" font="18px">Master</DefaultText>
-                            <DefaultText color='#aaa' font="12px">Cartão com final 3759</DefaultText>
+                            <DefaultText color='#aaa' font="12px">Card with end 3759</DefaultText>
                         </LeftBlock>
                     </LeftView>
                 </CardView>
 
                 <CardView mTop="5px" height="70px">
                     <PlusCircleIcon width="30px" height="30px" fill="#1fa1c7" />
-                    <DefaultText mLeft="10px" color="#1fa1c7" font="16px">Adicionar cartão de crédito</DefaultText>
+                    <DefaultText mLeft="10px" color="#1fa1c7" font="16px">Add credit card</DefaultText>
                 </CardView>
 
                 <CupomBtn underlayColor="transparent" onPress={() => console.log('olá mundo')}>
                     <>
                         <CupomIcon width="25px" height="25px" fill="#1fa1c7" />
-                        <DefaultText deco="underline" mLeft="10px" font="18px" color="#1fa1c7">Usar código promocional</DefaultText>
+                        <DefaultText deco="underline" mLeft="10px" font="18px" color="#1fa1c7">Use promotional code</DefaultText>
                     </>
                 </CupomBtn>
             </MainContent>

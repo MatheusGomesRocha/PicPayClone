@@ -45,13 +45,18 @@ export const UserImg = styled.Image`
 export const TextBtn = styled.TouchableOpacity``;
 
 
-export const MainContent = styled.View``;
+export const MainContent = styled.View`
+    background-color: ${gray};
+    padding-bottom: 80px;
+`;
 export const DefaultBtn = styled.TouchableHighlight`
     height: ${props => props.height || '67px'};
+    margin-top: ${props => props.mTop || '0'};
+    background-color: #fff;
     padding: 0 15px;
     justify-content: center;
     borderBottomWidth: 1px;
-    borderBottomColor: #ddd;
+    borderBottomColor: #cecece;
 `;
 export const BtnText = styled.Text`
     font-weight: bold;
@@ -68,5 +73,5 @@ export const BlockText = styled.View`
     height: 45px;
     justify-content: flex-end;
     borderBottomWidth: 1px;
-    borderBottomColor: #ddd;
+    borderBottomColor: #cecece;
 `;

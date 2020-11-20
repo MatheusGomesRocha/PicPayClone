@@ -27,8 +27,8 @@ import {
 
 let arrayBtnBig = [
     { id: '1', content: 'Bankidô', subContent: '@matheus.gomes1039', screen: 'bankido' },
-    { id: '2', content: 'Personal data', subContent: 'Nome, CPF e data de nascimento', screen: 'user_data' },
-    { id: '3', content: 'E-mail', subContent: 'm*************2@hotmail.com', screen: 'email' },
+    { id: '2', content: 'Personal data', subContent: 'Name, CPF e Data of birth', screen: 'user_data' },
+    { id: '3', content: 'E-mail', subContent: 'mat**********92@hotmail.com', screen: 'email' },
     { id: '4', content: 'Contact number', subContent: '(85) ***45-**87', screen: 'number' },
 ];
 
@@ -96,6 +96,33 @@ export default () => {
                         </DefaultBtn>
                     </DefaultBlock>
 
+                    <DefaultBlock>
+                        <BlockText>
+                            <DefaultText bolder="bold" color="#1fa1c7">Configuration</DefaultText>
+                        </BlockText>
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                            <DefaultText bolder="bold">Notifications</DefaultText>
+                        </DefaultBtn>
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                            <DefaultText bolder="bold">Password update</DefaultText>
+                        </DefaultBtn>
+                    </DefaultBlock>
+
+                    <DefaultBlock>
+                        <BlockText>
+                            <DefaultText bolder="bold" color="#1fa1c7">General</DefaultText>
+                        </BlockText>
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                            <DefaultText bolder="bold">About Bankidô</DefaultText>
+                        </DefaultBtn>
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                            <DefaultText bolder="bold">Need help?</DefaultText>
+                        </DefaultBtn>
+                    </DefaultBlock>
+
+                    <DefaultBtn mTop="25px" underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                        <DefaultText bolder="bold" color="red" font="16px">Log out</DefaultText>
+                    </DefaultBtn>
 
                 </MainContent>
 

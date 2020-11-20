@@ -41,9 +41,9 @@ export default () => {
                 ListHeaderComponent={
                     <>
                         <Header>
-                            <DefaultText bolder="bold" font="18px">Notificações</DefaultText>
+                            <DefaultText bolder="bold" font="18px">Notifications</DefaultText>
                             <BtnConfig onPress={() => console.log('Olá')}>
-                                <DefaultText bolder="bold" color="#1fa1c7">Configurar</DefaultText>
+                                <DefaultText bolder="bold" color="#1fa1c7">Configuration</DefaultText>
                             </BtnConfig>
                         </Header>
                     </>

@@ -32,7 +32,7 @@ const Touch = styled.TouchableOpacity`
 const TouchCenter = styled.TouchableHighlight`
     width: 65px;
     height: 65px;
-    background-color: ${props=>props.bgColor || '#00AC4A'};
+    background-color: ${props=>props.bgColor || '#5ad2f4'};
     justify-content: center;
     align-items: center;
     margin-top: -15px;
@@ -50,26 +50,26 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
             <Touch key={index} onPress={() => goTo('home')}>
                 <>
                     {state.index == 0 ?
-                        <HomeFullIcon width="25" height="25" fill="#026731" />
+                        <HomeFullIcon width="25" height="25" fill="#1fa1c7" />
                         :
                         <HomeIcon width="25" height="25" fill="#4d565b" />
                     }
-                    <Texto color={state.index == 0 && '#026731'}>Inicio</Texto>
+                    <Texto color={state.index == 0 && '#1fa1c7'}>Inicio</Texto>
                 </>
             </Touch>
 
             <Touch key={index} onPress={() => goTo('wallet')}>
                 <>
                     {state.index == 1 ?
-                        <WalletFullIcon width="25" height="25" fill="#026731" />
+                        <WalletFullIcon width="25" height="25" fill="#1fa1c7" />
                         :
                         <WalletIcon width="25" height="25" fill="#4d565b" />
                     }
-                    <Texto color={state.index == 1 && '#026731'}>Carteira</Texto>
+                    <Texto color={state.index == 1 && '#1fa1c7'}>Carteira</Texto>
                 </>
             </Touch>
 
-            <TouchCenter bgColor={state.index == 2 && '#026731'} underlayColor="#026731" key={index} onPress={() => goTo('pay')}>
+            <TouchCenter bgColor={state.index == 2 && '#1fa1c7'} underlayColor="#1fa1c7" key={index} onPress={() => goTo('pay')}>
                 <>
                     <PayIcon width="25" height="25" fill="#fff" />
                     <Texto color="#fff">Pagar</Texto>
@@ -79,22 +79,22 @@ export default ({ state, descriptors, navigation, index }) => {          /** Pro
             <Touch key={index} onPress={() => goTo('notification')}>
                 <>
                     {state.index == 3 ?
-                        <BellFullIcon width="25" height="25" fill="#026731" />
+                        <BellFullIcon width="25" height="25" fill="#1fa1c7" />
                         :
                         <BellIcon width="25" height="25" fill="#4d565b" />
                     }
-                    <Texto color={state.index == 3 && '#026731'}>Notificações</Texto>
+                    <Texto color={state.index == 3 && '#1fa1c7'}>Notificações</Texto>
                 </>
             </Touch>
 
             <Touch key={index} onPress={() => goTo('config')}>
                 <>
                     {state.index == 4 ?
-                        <ConfigFullIcon width="25" height="25" fill="#026731" />
+                        <ConfigFullIcon width="25" height="25" fill="#1fa1c7" />
                         :
                         <ConfigIcon width="25" height="25" fill="#4d565b" />
                     }
-                    <Texto color={state.index == 4 && '#026731'}>Ajustes</Texto>
+                    <Texto color={state.index == 4 && '#1fa1c7'}>Ajustes</Texto>
                 </>
             </Touch>
         </Div>

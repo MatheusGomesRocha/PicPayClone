@@ -20,23 +20,24 @@ import {
     DefaultBtn,
     BtnText,
     BtnSubText,
+
+    DefaultBlock,
+    BlockText,
 } from './styled';
 
-let arrayBtn = [
-    { id: '1', content: 'Conta Bancária', screen: 'bank_account' },
-    { id: '2', content: 'Taxas e limites', screen: 'taxa' },
-    { id: '3', content: 'Meus Endereços', screen: 'adress' },
-    { id: '4', content: 'Meus favoritos', screen: 'favorite' },
-    { id: '5', content: 'Validar Identidade', screen: 'id_validation' },
-    { id: '6', content: 'Atualizar cadastro', screen: 'att_register' },
-    { id: '7', content: 'Meu PIX', screen: 'pix' },
+let arrayBtnBig = [
+    { id: '1', content: 'Bankidô', subContent: '@matheus.gomes1039', screen: 'bankido' },
+    { id: '2', content: 'Personal data', subContent: 'Nome, CPF e data de nascimento', screen: 'user_data' },
+    { id: '3', content: 'E-mail', subContent: 'm*************2@hotmail.com', screen: 'email' },
+    { id: '4', content: 'Contact number', subContent: '(85) ***45-**87', screen: 'number' },
 ];
 
-let arrayBtnBig = [
-    { id: '1', content: 'Meu PicPay', subContent: '@matheus.gomes1039', screen: 'picpay' },
-    { id: '2', content: 'Meu número', subContent: '(**) *****-4687', screen: 'number' },
-    { id: '3', content: 'Meu E-mail', subContent: 'm*************2@h*****l.com', screen: 'email' },
-    { id: '4', content: 'Dados pessoais', subContent: 'Nome, CPF e data de nascimento', screen: 'user_data' },
+let arrayBtn = [
+    { id: '1', content: 'Bank Account', screen: 'bank_account' },
+    { id: '2', content: 'Id validation', screen: 'id_validation' },
+    { id: '3', content: 'My addresses', screen: 'adress' },
+    { id: '4', content: 'Favorites', screen: 'favorite' },
+    { id: '5', content: 'PIX', screen: 'pix' },
 ];
 
 export default () => {
@@ -46,7 +47,7 @@ export default () => {
 
             <Scroll>
                 <BtnAbsolute onPress={() => console.log('Olá')}>
-                    <DefaultText font="16px" bolder="bold" color="#36B477">Ajuda</DefaultText>
+                    <DefaultText font="16px" bolder="bold" color="#1fa1c7">Ajuda</DefaultText>
                 </BtnAbsolute>
 
                 <Header>
@@ -55,7 +56,7 @@ export default () => {
                     <DefaultText font="16px" color="#aaa">Matheus Gomes</DefaultText>
 
                     <TextBtn onPress={() => console.log('olá')}>
-                        <DefaultText color="#36B477">Ver meu perfil</DefaultText>
+                        <DefaultText color="#1fa1c7">Ver meu perfil</DefaultText>
                     </TextBtn>
 
                     <TextAbsolute>Minha conta</TextAbsolute>
@@ -76,6 +77,24 @@ export default () => {
                             <BtnText>{item.content}</BtnText>
                         </DefaultBtn>
                     ))}
+
+                    <DefaultBlock>
+                        <BlockText>
+                            <DefaultText bolder="bold" color="#1fa1c7">Promotions</DefaultText>
+                        </BlockText>
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                            <DefaultText bolder="bold">Use promotional code</DefaultText>
+                        </DefaultBtn>
+                    </DefaultBlock>
+
+                    <DefaultBlock>
+                        <BlockText>
+                            <DefaultText bolder="bold" color="#1fa1c7">To my business</DefaultText>
+                        </BlockText>
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                            <DefaultText bolder="bold">Bankidô PRO</DefaultText>
+                        </DefaultBtn>
+                    </DefaultBlock>
 
 
                 </MainContent>

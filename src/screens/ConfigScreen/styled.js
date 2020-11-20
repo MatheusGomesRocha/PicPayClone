@@ -8,11 +8,6 @@ export const Container = styled.SafeAreaView`
 
 export const Scroll = styled.ScrollView``;
 
-export const DefaultText = styled.Text`
-    color: ${props => props.color || '#000'};
-    font-size: ${props => props.font || '14px'};
-    font-weight: ${props => props.bolder || 'normal'};
-`;
 
 export const BtnAbsolute = styled.TouchableOpacity`
     position: absolute;
@@ -50,7 +45,7 @@ export const MainContent = styled.View`
     padding-bottom: 80px;
 `;
 export const DefaultBtn = styled.TouchableHighlight`
-    height: ${props => props.height || '67px'};
+    height: ${props => props.height || '75px'};
     margin-top: ${props => props.mTop || '0'};
     background-color: #fff;
     padding: 0 15px;
@@ -70,7 +65,7 @@ export const DefaultBlock = styled.View``;
 export const BlockText = styled.View`
     background-color: ${gray};  
     padding: 0 15px 7px 15px;
-    height: 45px;
+    height: 50px;
     justify-content: flex-end;
     borderBottomWidth: 1px;
     borderBottomColor: #cecece;

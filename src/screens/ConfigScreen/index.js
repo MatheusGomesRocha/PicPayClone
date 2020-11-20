@@ -1,6 +1,8 @@
 import React from 'react';
 import img from '../../assets/img/895719.png';
 
+import { DefaultText } from '../../components/DefaultText';
+
 import { StatusBar } from 'react-native';
 
 import {
@@ -8,7 +10,6 @@ import {
 
     Scroll,
 
-    DefaultText,
     BtnAbsolute,
     TextAbsolute,
 
@@ -47,7 +48,7 @@ export default () => {
 
             <Scroll>
                 <BtnAbsolute onPress={() => console.log('Olá')}>
-                    <DefaultText font="16px" bolder="bold" color="#1fa1c7">Ajuda</DefaultText>
+                    <DefaultText font="16px" bolder="bold" color="#1fa1c7">Help</DefaultText>
                 </BtnAbsolute>
 
                 <Header>
@@ -56,10 +57,10 @@ export default () => {
                     <DefaultText font="16px" color="#aaa">Matheus Gomes</DefaultText>
 
                     <TextBtn onPress={() => console.log('olá')}>
-                        <DefaultText color="#1fa1c7">Ver meu perfil</DefaultText>
+                        <DefaultText color="#1fa1c7">See my profile</DefaultText>
                     </TextBtn>
 
-                    <TextAbsolute>Minha conta</TextAbsolute>
+                    <TextAbsolute>My Account</TextAbsolute>
                 </Header>
 
                 <MainContent>
@@ -73,7 +74,7 @@ export default () => {
                     ))}
 
                     {arrayBtn.map((item, k) => (
-                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => console.log(item.screen)} height="50px">
+                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => console.log(item.screen)} height="60px">
                             <BtnText>{item.content}</BtnText>
                         </DefaultBtn>
                     ))}
@@ -82,7 +83,7 @@ export default () => {
                         <BlockText>
                             <DefaultText bolder="bold" color="#1fa1c7">Promotions</DefaultText>
                         </BlockText>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Use promotional code</DefaultText>
                         </DefaultBtn>
                     </DefaultBlock>
@@ -91,7 +92,7 @@ export default () => {
                         <BlockText>
                             <DefaultText bolder="bold" color="#1fa1c7">To my business</DefaultText>
                         </BlockText>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Bankidô PRO</DefaultText>
                         </DefaultBtn>
                     </DefaultBlock>
@@ -100,10 +101,10 @@ export default () => {
                         <BlockText>
                             <DefaultText bolder="bold" color="#1fa1c7">Configuration</DefaultText>
                         </BlockText>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Notifications</DefaultText>
                         </DefaultBtn>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Password update</DefaultText>
                         </DefaultBtn>
                     </DefaultBlock>
@@ -112,15 +113,15 @@ export default () => {
                         <BlockText>
                             <DefaultText bolder="bold" color="#1fa1c7">General</DefaultText>
                         </BlockText>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">About Bankidô</DefaultText>
                         </DefaultBtn>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Need help?</DefaultText>
                         </DefaultBtn>
                     </DefaultBlock>
 
-                    <DefaultBtn mTop="25px" underlayColor="#ddd" onPress={() => console.log('olá')} height="50px">
+                    <DefaultBtn mTop="25px" underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                         <DefaultText bolder="bold" color="red" font="16px">Log out</DefaultText>
                     </DefaultBtn>
 

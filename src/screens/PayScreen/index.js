@@ -8,10 +8,10 @@ import Pin from '../../assets/svg/pin.svg';
 import Phone from '../../assets/svg/smartphone.svg';
 import Bus from '../../assets/svg/bus.svg';
 
+import { DefaultText } from '../../components/DefaultText';
+
 import {
     Container,
-
-    DefaultText,
 
     Header,
 

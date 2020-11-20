@@ -4,41 +4,15 @@ export const Container = styled.SafeAreaView`
     flex: 1;
 `;
 
-export const ChartBtn = styled.TouchableOpacity`
-    width: 30px;
-    height: 30px;
-    border-radius: 25px;
-    border-color: #ddd;
-    border-width: 1px;
-    position: absolute;
-    z-index: 999;
-    top: 20px;
-    right: 20px;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const DefaultText = styled.Text`
-    color: ${props => props.color || '#eee'};
-    font-size: ${props => props.font || '14px'};
-    margin-top: ${props=>props.mTop || '0'};
-    margin-left: ${props=>props.mLeft || '0'};
-    text-decoration: ${props=>props.deco || 'none'};
-`;
-
 export const Header = styled.View`
     align-items: center;
     justify-content: center;
     height: 260px;
 `;
-export const TextBlock = styled.View`
-    align-items: center;
-`;
 export const BtnBlock = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 35px;
 `;
 export const DefaultBtn = styled.TouchableHighlight`
     background-color: transparent;
@@ -50,6 +24,11 @@ export const DefaultBtn = styled.TouchableHighlight`
     justify-content: center;
     margin: 0 7px;
     flex-direction: row;
+`;
+
+export const TextBlock = styled.View`
+    align-items: center;
+    margin-top: 35px;
 `;
 
 

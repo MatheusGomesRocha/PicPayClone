@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
-import LinearGradient from 'react-native-linear-gradient';
 import CardIcon from '../../assets/svg/mastercard.svg';
 import PlusCircleIcon from '../../assets/svg/plus_circle.svg';
 import CupomIcon from '../../assets/svg/cupom.svg';
 import PhoneIcon from '../../assets/svg/phone.svg';
 import BankIcon from '../../assets/svg/bank.svg';
-import ChartIcon from '../../assets/svg/chart.svg';
+
+import { DefaultText } from '../../components/DefaultText';
 
 import { Switch, StatusBar, Animated } from 'react-native';
 
 import {
     Container,
-
-    ChartBtn,
-
-    DefaultText,
 
     Header,
     TextBlock,
@@ -34,6 +30,7 @@ import {
 export default () => {
     const [animation, setAnimation] = useState(new Animated.Value(0));
     const [payWithAccount, setPayWithAccount] = useState(false);
+
 
     const handleAnimation = () => {
         if (payWithAccount == false) {
@@ -64,19 +61,8 @@ export default () => {
 
             <StatusBar barStyle="light-content" backgroundColor={payWithAccount ? '#5ad2f4' : '#aaa'} />
 
-            <ChartBtn>
-                <ChartIcon width="15px" height="15px" />
-
-            </ChartBtn>
-
             <Animated.View style={{ backgroundColor: boxInterpolation }}>
                 <Header>
-                    <TextBlock>
-                        <DefaultText mTop="-10px" color="#fff">Balance Bankidô</DefaultText>
-                        <DefaultText mTop="7px" font="35px" color="#fff">R$ 32,48</DefaultText>
-                        <DefaultText mTop="7px">Your balance yields 210% CDI</DefaultText>
-                    </TextBlock>
-
                     <BtnBlock>
                         <DefaultBtn underlayColor="#ccc" onPress={() => console.log('add')}>
                             <>
@@ -92,6 +78,11 @@ export default () => {
                             </>
                         </DefaultBtn>
                     </BtnBlock>
+
+                    <TextBlock>
+                        <DefaultText mTop="-10px" color="#fff">Balance Bankidô</DefaultText>
+                        <DefaultText mTop="7px" font="32px" bolder="bold" color="#fff">R$ 32,48</DefaultText>
+                    </TextBlock>
                 </Header>
             </Animated.View >
 

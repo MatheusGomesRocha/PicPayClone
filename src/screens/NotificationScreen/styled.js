@@ -25,9 +25,4 @@ export const ArrayItem = styled.TouchableHighlight`
     borderBottomWidth: 1px;
     borderBottomColor: #ddd;
 `;
-export const DefaultText = styled.Text`
-    color: ${props=>props.color || '#444'};
-    font-size: ${props=>props.font || '14px'};
-    margin-top: ${props=>props.mTop || '0'};
-    font-weight: ${props=>props.bolder || 'normal'};
-`;
+

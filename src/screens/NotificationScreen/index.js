@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { DefaultText } from '../../components/DefaultText';
+
 import { StatusBar } from 'react-native';
 
 import {
@@ -11,7 +13,6 @@ import {
     BtnConfig,
 
     ArrayItem,
-    DefaultText,
 } from './styled';
 
 let array = [
@@ -43,7 +44,7 @@ export default () => {
                         <Header>
                             <DefaultText bolder="bold" font="18px">Notifications</DefaultText>
                             <BtnConfig onPress={() => console.log('Olá')}>
-                                <DefaultText bolder="bold" color="#1fa1c7">Configuration</DefaultText>
+                                <DefaultText font="16px" bolder="bold" color="#1fa1c7">Configuration</DefaultText>
                             </BtnConfig>
                         </Header>
                     </>

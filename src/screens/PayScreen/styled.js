@@ -5,13 +5,6 @@ export const Container = styled.SafeAreaView`
     background-color: #fff;
 `;
 
-export const DefaultText = styled.Text`
-    font-size: ${props=>props.font || '14px'};
-    font-weight: ${props=>props.bolder || 'normal'};
-    color: ${props=>props.color || '#000'};
-    margin-left: ${props=>props.mLeft || '0'};
-`;
-
 export const Header = styled.View`
     flex-direction: row;
     padding-left: 15px;

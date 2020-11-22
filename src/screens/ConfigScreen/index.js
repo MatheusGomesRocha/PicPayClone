@@ -1,5 +1,6 @@
 import React from 'react';
 import img from '../../assets/img/895719.png';
+import {useNavigation} from '@react-navigation/native';
 
 import { DefaultText } from '../../components/DefaultText';
 
@@ -27,7 +28,7 @@ import {
 } from './styled';
 
 let arrayBtnBig = [
-    { id: '1', content: 'Bankidô', subContent: '@matheus.gomes1039', screen: 'bankido' },
+    { id: '1', content: 'Bankidô', subContent: '@matheus.gomes1039', screen: 'userbank' },
     { id: '2', content: 'Personal data', subContent: 'Name, CPF e Data of birth', screen: 'user_data' },
     { id: '3', content: 'E-mail', subContent: 'mat**********92@hotmail.com', screen: 'email' },
     { id: '4', content: 'Contact number', subContent: '(85) ***45-**87', screen: 'number' },
@@ -42,6 +43,8 @@ let arrayBtn = [
 ];
 
 export default () => {
+    const navigation = useNavigation();
+
     return (
         <Container>
             <StatusBar barStyle="dark-content" backgroundColor="#eee" />
@@ -65,7 +68,7 @@ export default () => {
 
                 <MainContent>
                     {arrayBtnBig.map((item, k) => (
-                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => console.log(item.screen)}>
+                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => navigation.navigate(item.screen)}>
                             <>
                                 <BtnText>{item.content}</BtnText>
                                 <BtnSubText>{item.subContent}</BtnSubText>

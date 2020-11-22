@@ -5,6 +5,8 @@ import Cupom from '../../assets/svg/cupom.svg';
 import Search from '../../assets/svg/search.svg';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
+import { StatusBar } from 'react-native';
+
 import { DefaultText } from '../../components/DefaultText';
 
 import {
@@ -82,6 +84,8 @@ export default () => {
     }
     return (
         <Container>
+            <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+            
             <Scroll showsVerticalScrollIndicator={false}>
                 <Header>
                     <LeftHeader>

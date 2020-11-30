@@ -10,7 +10,7 @@ import {
     DivInput,
     Input,
 
-    BtnHeader,
+    DefaultBtn,
 } from './styled';
 
 export default () => {
@@ -38,9 +38,9 @@ export default () => {
                 Always that you get paid by someone, show them this user. It's with this, that you'll be found
             </DefaultText>
 
-            <BtnHeader underlayColor="#1D94B8" onPress={() => HandleEdit()}>
+            <DefaultBtn underlayColor="#1D94B8" onPress={() => HandleEdit()}>
                 <DefaultText enabled={true} color="#fff" font="16px">Salvar</DefaultText>
-            </BtnHeader>
+            </DefaultBtn>
         </Container>
     );
 }

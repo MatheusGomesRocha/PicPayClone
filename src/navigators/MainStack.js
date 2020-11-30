@@ -10,8 +10,8 @@ export default () => {
     return(
         <HomeStack.Navigator>
             <HomeStack.Screen name="apptab" component={AppTab} options={{headerTitle: null, headerTransparent: true,}} />
-            <HomeStack.Screen name="userbank" component={UserBankScreen} options={{headerTitle: 'UserBank', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
-            <HomeStack.Screen name="user_data" component={UserDataScreen} options={{headerTitle: 'UserData', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
+            <HomeStack.Screen name="userbank" component={UserBankScreen} options={{headerTitle: 'User Bank', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
+            <HomeStack.Screen name="user_data" component={UserDataScreen} options={{headerTitle: 'User Data', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
         </HomeStack.Navigator>
     );
 }

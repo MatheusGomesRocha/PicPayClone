@@ -19,7 +19,7 @@ export const Input = styled.TextInput`
     flex: 1;
 `;
 
-export const BtnHeader = styled.TouchableHighlight`
+export const DefaultBtn = styled.TouchableHighlight`
     margin-top: 30px;
     background-color: #1fa1c7;
     width: 100%;

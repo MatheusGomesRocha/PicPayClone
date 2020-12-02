@@ -28,10 +28,9 @@ import {
 } from './styled';
 
 let arrayBtnBig = [
-    { id: '1', content: 'Bankidô', subContent: '@matheus.gomes1039', screen: 'userbank' },
+    { id: '1', content: 'Bankidô', subContent: '@matheus.gomes1039', screen: 'user_bank' },
     { id: '2', content: 'Personal data', subContent: 'Name, CPF e Data of birth', screen: 'user_data' },
-    { id: '3', content: 'E-mail', subContent: 'mat**********92@hotmail.com', screen: 'email' },
-    { id: '4', content: 'Contact number', subContent: '(85) ***45-**87', screen: 'number' },
+    { id: '3', content: 'E-mail', subContent: 'mat**********92@hotmail.com', screen: 'user_email' },
 ];
 
 let arrayBtn = [

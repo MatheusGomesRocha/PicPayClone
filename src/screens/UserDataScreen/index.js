@@ -33,7 +33,7 @@ export default () => {
             </DivInput>
 
             <DefaultBtn underlayColor="#1D94B8" onPress={() => HandleEdit()}>
-                <DefaultText enabled={true} color="#fff" font="16px">Salvar</DefaultText>
+                <DefaultText enabled={true} color="#fff" font="16px">Update</DefaultText>
             </DefaultBtn>
 
         </Container>

@@ -76,7 +76,7 @@ export default () => {
                     ))}
 
                     {arrayBtn.map((item, k) => (
-                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => console.log(item.screen)} height="60px">
+                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => navigation.navigate(item.screen)} height="60px">
                             <BtnText>{item.content}</BtnText>
                         </DefaultBtn>
                     ))}

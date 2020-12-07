@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import img from '../../assets/img/895719.png';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import { DefaultText } from '../../components/DefaultText';
 
-import { StatusBar } from 'react-native';
+import { StatusBar, Modal } from 'react-native';
 
 import {
     Container,
 
     Scroll,
+
+    ModalView,
+    ModalItemView,
+    ModalTitle,
+    ModalBtn,
 
     BtnAbsolute,
     TextAbsolute,
@@ -42,6 +47,8 @@ let arrayBtn = [
 ];
 
 export default () => {
+    const [modalVisible, setModalVisible] = useState(false);
+
     const navigation = useNavigation();
 
     return (
@@ -49,6 +56,28 @@ export default () => {
             <StatusBar barStyle="dark-content" backgroundColor="#eee" />
 
             <Scroll>
+
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => setModalVisible(false)}
+                >
+                    <ModalView>
+                        <ModalItemView>
+                            <ModalBtn underlayColor="#ddd">
+                                <DefaultText bolder="bold" color="#1fa1c7">Forgot password</DefaultText>
+                            </ModalBtn>
+                            <ModalBtn underlayColor="#ddd">
+                                <DefaultText bolder="bold" color="#1fa1c7">Redefinir password</DefaultText>
+                            </ModalBtn>
+                            <ModalBtn underlayColor="#ddd" onPress={() => setModalVisible(false)}>
+                                <DefaultText deco="underline" color="red">Cancel</DefaultText>
+                            </ModalBtn>
+                        </ModalItemView>
+                    </ModalView>
+                </Modal>
+
                 <BtnAbsolute onPress={() => console.log('Olá')}>
                     <DefaultText font="16px" bolder="bold" color="#1fa1c7">Help</DefaultText>
                 </BtnAbsolute>
@@ -106,7 +135,7 @@ export default () => {
                         <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Notifications</DefaultText>
                         </DefaultBtn>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => setModalVisible(true)} height="60px">
                             <DefaultText bolder="bold">Password update</DefaultText>
                         </DefaultBtn>
                     </DefaultBlock>

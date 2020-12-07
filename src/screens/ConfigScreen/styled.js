@@ -9,6 +9,35 @@ export const Container = styled.SafeAreaView`
 export const Scroll = styled.ScrollView``;
 
 
+export const ModalView = styled.View`
+    background-color: rgba(0, 0, 0, 0.3);
+    flex: 1;
+    justify-content: flex-end;
+`;
+export const ModalItemView = styled.View`
+    height: 150px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #fff;  
+`;
+export const ModalTitle = styled.View`
+    borderBottomWidth: 1px;
+    borderBottomColor: #ddd;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+`;
+export const ModalBtn = styled.TouchableHighlight`
+    borderBottomWidth: 1px;
+    borderBottomColor: #ddd;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+`;
+
+
 export const BtnAbsolute = styled.TouchableOpacity`
     position: absolute;
     top: 15px;
@@ -70,3 +99,4 @@ export const BlockText = styled.View`
     borderBottomWidth: 1px;
     borderBottomColor: #cecece;
 `;
+

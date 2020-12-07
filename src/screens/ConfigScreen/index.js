@@ -51,6 +51,11 @@ export default () => {
 
     const navigation = useNavigation();
 
+    const ModalNavigate = () => {
+        navigation.navigate('forgot');
+        setModalVisible(false);
+    }
+
     return (
         <Container>
             <StatusBar barStyle="dark-content" backgroundColor="#eee" />
@@ -65,11 +70,11 @@ export default () => {
                 >
                     <ModalView>
                         <ModalItemView>
-                            <ModalBtn underlayColor="#ddd">
+                            <ModalBtn onPress={ModalNavigate} underlayColor="#ddd">
                                 <DefaultText bolder="bold" color="#1fa1c7">Forgot password</DefaultText>
                             </ModalBtn>
                             <ModalBtn underlayColor="#ddd">
-                                <DefaultText bolder="bold" color="#1fa1c7">Redefinir password</DefaultText>
+                                <DefaultText bolder="bold" color="#1fa1c7">Redefine password</DefaultText>
                             </ModalBtn>
                             <ModalBtn underlayColor="#ddd" onPress={() => setModalVisible(false)}>
                                 <DefaultText deco="underline" color="red">Cancel</DefaultText>

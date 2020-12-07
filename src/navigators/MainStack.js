@@ -6,6 +6,7 @@ import UserDataScreen from '../screens/UserDataScreen';
 import UserEmailScreen from '../screens/UserEmailScreen';
 import BankAccountScreen from '../screens/BankAccountScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
+import ForgotScreen from '../screens/ForgotScreen';
 
 const HomeStack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export default () => {
             <HomeStack.Screen name="user_email" component={UserEmailScreen} options={{headerTitle: 'User Email', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
             <HomeStack.Screen name="bank_account" component={BankAccountScreen} options={{headerTitle: 'Bank Account', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
             <HomeStack.Screen name="favorite" component={FavoriteScreen} options={{headerTitle: 'Favorites', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
+            <HomeStack.Screen name="forgot" component={ForgotScreen} options={{headerTitle: 'Forgot Password', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
         </HomeStack.Navigator>
     );
 }

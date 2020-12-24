@@ -51,7 +51,12 @@ export default () => {
 
     const navigation = useNavigation();
 
-    const ModalNavigate = () => {
+    const ModalNavigateForgot = () => {
+        navigation.navigate('forgot');
+        setModalVisible(false);
+    }
+
+    const ModalNavigateRedefine = () => {
         navigation.navigate('forgot');
         setModalVisible(false);
     }
@@ -70,10 +75,10 @@ export default () => {
                 >
                     <ModalView>
                         <ModalItemView>
-                            <ModalBtn onPress={ModalNavigate} underlayColor="#ddd">
+                            <ModalBtn onPress={ModalNavigateForgot} underlayColor="#ddd">
                                 <DefaultText bolder="bold" color="#1fa1c7">Forgot password</DefaultText>
                             </ModalBtn>
-                            <ModalBtn underlayColor="#ddd">
+                            <ModalBtn onPress={ModalNavigateRedefine} underlayColor="#ddd">
                                 <DefaultText bolder="bold" color="#1fa1c7">Redefine password</DefaultText>
                             </ModalBtn>
                             <ModalBtn underlayColor="#ddd" onPress={() => setModalVisible(false)}>

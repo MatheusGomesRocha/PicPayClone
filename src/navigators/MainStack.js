@@ -20,6 +20,7 @@ export default () => {
             <HomeStack.Screen name="bank_account" component={BankAccountScreen} options={{headerTitle: 'Bank Account', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
             <HomeStack.Screen name="favorite" component={FavoriteScreen} options={{headerTitle: 'Favorites', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
             <HomeStack.Screen name="forgot" component={ForgotScreen} options={{headerTitle: 'Forgot Password', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
+            <HomeStack.Screen name="redefine" component={ForgotScreen} options={{headerTitle: 'Redefine Password', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
         </HomeStack.Navigator>
     );
 }

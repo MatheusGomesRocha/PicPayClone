@@ -18,8 +18,6 @@ export default () => {
         <Container>
             <StatusBar barStyle="light-content" backgroundColor="#1fa1c7" />
 
-            <DefaultText font="25px" mTop="15px">Password reminder</DefaultText>
-
             <DefaultText mTop="15px" color="#aaa">
                 In case you forgotten your password, enter your CPF that you used to register, in the field bellow. After that, we'll send you an email with instructions to reset your password
             </DefaultText>

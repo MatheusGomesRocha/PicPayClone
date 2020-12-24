@@ -14,11 +14,17 @@ export const DivInput = styled.View`
     width: 100%;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
     margin-top: 30px;
+`;
+export const LineDiv = styled.View`
+    padding: 0 15px 0 10px;
+    borderRightWidth: 1px;
+    borderRightColor: #aaa;
 `;
 export const Input = styled.TextInput`
     flex: 1;
-    padding-left: 20px;
+    padding-left: 15px;
 `;
 
 

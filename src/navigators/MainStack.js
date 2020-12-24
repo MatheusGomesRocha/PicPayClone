@@ -7,6 +7,7 @@ import UserEmailScreen from '../screens/UserEmailScreen';
 import BankAccountScreen from '../screens/BankAccountScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import ForgotScreen from '../screens/ForgotScreen';
+import RedefineScreen from '../screens/RedefineScreen';
 
 const HomeStack = createStackNavigator();
 
@@ -20,7 +21,7 @@ export default () => {
             <HomeStack.Screen name="bank_account" component={BankAccountScreen} options={{headerTitle: 'Bank Account', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
             <HomeStack.Screen name="favorite" component={FavoriteScreen} options={{headerTitle: 'Favorites', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
             <HomeStack.Screen name="forgot" component={ForgotScreen} options={{headerTitle: 'Forgot Password', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
-            <HomeStack.Screen name="redefine" component={ForgotScreen} options={{headerTitle: 'Redefine Password', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
+            <HomeStack.Screen name="redefine" component={RedefineScreen} options={{headerTitle: 'Reset Password', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#1fa1c7'} }}/>
         </HomeStack.Navigator>
     );
 }

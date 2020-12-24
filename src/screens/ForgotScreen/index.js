@@ -21,7 +21,7 @@ export default () => {
             <DefaultText font="25px" mTop="15px">Password reminder</DefaultText>
 
             <DefaultText mTop="15px" color="#aaa">
-                In case you forgotten your password, enter your CPF that you used to register with Bankidô in the field bellow
+                In case you forgotten your password, enter your CPF that you used to register, in the field bellow. After that, we'll send you an email with instructions to reset your password
             </DefaultText>
 
             <DivInput>

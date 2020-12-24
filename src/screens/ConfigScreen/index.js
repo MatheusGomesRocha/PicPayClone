@@ -57,7 +57,7 @@ export default () => {
     }
 
     const ModalNavigateRedefine = () => {
-        navigation.navigate('forgot');
+        navigation.navigate('redefine');
         setModalVisible(false);
     }
 
@@ -79,7 +79,7 @@ export default () => {
                                 <DefaultText bolder="bold" color="#1fa1c7">Forgot password</DefaultText>
                             </ModalBtn>
                             <ModalBtn onPress={ModalNavigateRedefine} underlayColor="#ddd">
-                                <DefaultText bolder="bold" color="#1fa1c7">Redefine password</DefaultText>
+                                <DefaultText bolder="bold" color="#1fa1c7">Reset password</DefaultText>
                             </ModalBtn>
                             <ModalBtn underlayColor="#ddd" onPress={() => setModalVisible(false)}>
                                 <DefaultText deco="underline" color="red">Cancel</DefaultText>

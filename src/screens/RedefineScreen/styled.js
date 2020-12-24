@@ -26,7 +26,7 @@ export const Input = styled.TextInput`
     flex: 1;
     padding-left: 15px;
 `;
-
+export const BtnEye = styled.TouchableOpacity``;
 
 export const DefaultBtn = styled.TouchableHighlight`
     background-color: #1fa1c7;

@@ -28,18 +28,18 @@ export default () => {
 
     return (
         <Container>
-            <StatusBar barStyle="light-content" backgroundColor="#1fa1c7" />
+            <StatusBar barStyle="light-content" backgroundColor="#DF274C" />
 
             <DivInput>
-                <DefaultText font="18px" color="#1fa1c7">@</DefaultText>
+                <DefaultText font="18px" color="#DF274C">@</DefaultText>
                 <Input onChangeText={(u) => setNewUser(u)} defaultValue={user} />
             </DivInput>
             <DefaultText color="#aaa">
                 Always that you get paid by someone, show them this user. It's with this, that you'll be found
             </DefaultText>
 
-            <DefaultBtn underlayColor="#1D94B8" onPress={() => HandleEdit()}>
-                <DefaultText enabled={true} color="#fff" font="16px">Salvar</DefaultText>
+            <DefaultBtn underlayColor="#BE1C3D" onPress={() => HandleEdit()}>
+                <DefaultText enabled={true} color="#fff" font="18px">Update</DefaultText>
             </DefaultBtn>
         </Container>
     );

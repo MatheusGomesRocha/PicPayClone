@@ -46,7 +46,7 @@ export default () => {
 
     return (
         <Container>
-            <StatusBar barStyle="light-content" backgroundColor="#1fa1c7" />
+            <StatusBar barStyle="light-content" backgroundColor="#DF274C" />
 
             <DefaultText font="16px" mTop="15px" color="#aaa">
                 If you want to reset your password, please, confirm your current password and then choose a new one
@@ -60,13 +60,13 @@ export default () => {
                 {securePass ?
                     <>
                         <BtnEye onPress={() => setSecurePass(false)}>
-                            <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
                         </BtnEye>
                     </>
                     :
                     <>
                         <BtnEye onPress={() => setSecurePass(true)}>
-                            <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
                         </BtnEye>
                     </>
                 }
@@ -80,13 +80,13 @@ export default () => {
                 {securePass1 ?
                     <>
                         <BtnEye onPress={() => setSecurePass1(false)}>
-                            <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
                         </BtnEye>
                     </>
                     :
                     <>
                         <BtnEye onPress={() => setSecurePass1(true)}>
-                            <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
                         </BtnEye>
                     </>
                 }
@@ -100,20 +100,20 @@ export default () => {
                 {securePass2 ?
                     <>
                         <BtnEye onPress={() => setSecurePass2(false)}>
-                            <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
                         </BtnEye>
                     </>
                     :
                     <>
                         <BtnEye onPress={() => setSecurePass2(true)}>
-                            <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
                         </BtnEye>
                     </>
                 }
             </DivInput>
 
-            <DefaultBtn onPress={() => console.log('olá mundo')} underlayColor="#1D94B8">
-                <DefaultText font="16px" color="#fff">Confirm reset</DefaultText>
+            <DefaultBtn onPress={() => console.log('olá mundo')} underlayColor="#BE1C3D">
+                <DefaultText font="18px" color="#fff">Confirm reset</DefaultText>
             </DefaultBtn>
         </Container>
     );

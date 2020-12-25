@@ -49,7 +49,7 @@ export default () => {
                         <ActivityTop>
 
                             <ActivityIcon>
-                                <Qr fill="#1fa1c7" width="20px" height="20px" />
+                                <Qr fill="#DF274C" width="25px" height="25px" />
                             </ActivityIcon>
                             <ActivityContent>
                                 <DefaultText font="16px">{item.type}</DefaultText>
@@ -59,7 +59,7 @@ export default () => {
                         </ActivityTop>
 
                         <ActivityBottom>
-                            <DefaultText color="#1fa1c7">R$ {item.price}</DefaultText>
+                            <DefaultText color="#DF274C">R$ {item.price}</DefaultText>
                             <DefaultText mLeft="10px">{item.date}</DefaultText>
                         </ActivityBottom>
                     </ActivityBlock>
@@ -89,7 +89,7 @@ export default () => {
             <Scroll showsVerticalScrollIndicator={false}>
                 <Header>
                     <LeftHeader>
-                        <Qr width="25px" height="25px" fill="#1fa1c7" />
+                        <Qr width="25px" height="25px" fill="#DF274C" />
                     </LeftHeader>
 
                     <CenterHeader>
@@ -98,14 +98,14 @@ export default () => {
                     </CenterHeader>
 
                     <RightHeader>
-                        <Gift style={{ marginRight: 20 }} width="25px" height="25px" fill="#1fa1c7" />
-                        <Cupom width="25px" height="25px" fill="#1fa1c7" />
+                        <Gift style={{ marginRight: 20 }} width="25px" height="25px" fill="#DF274C" />
+                        <Cupom width="25px" height="25px" fill="#DF274C" />
                     </RightHeader>
                 </Header>
 
                 <BtnInput underlayColor="transparent" onPress={() => console.log('Go to search')}>
                     <>
-                        <Search style={{ marginRight: 10 }} width="25px" height="25px" fill="#1fa1c7" />
+                        <Search style={{ marginRight: 10 }} width="25px" height="25px" fill="#DF274C" />
                         <DefaultText color="#aaa">What do you want to pay?</DefaultText>
                     </>
                 </BtnInput>
@@ -114,10 +114,10 @@ export default () => {
                     tabBarOptions={{
                         style: { height: 60, marginLeft: 220, justifyContent: 'flex-end', elevation: 0, backgroundColor: 'transparent' },
                         labelStyle: { fontSize: 16, textTransform: null },
-                        activeTintColor: '#1fa1c7',
+                        activeTintColor: '#DF274C',
                         inactiveTintColor: '#ccc',
                         tabStyle: { width: 80 },
-                        indicatorStyle: { backgroundColor: '#1fa1c7', height: 3 },
+                        indicatorStyle: { backgroundColor: '#DF274C', height: 3 },
                     }}
                 >
                     <TopTab.Screen name="current" component={All} options={{ tabBarLabel: 'All' }} />

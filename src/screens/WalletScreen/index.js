@@ -53,13 +53,13 @@ export default () => {
 
     const boxInterpolation = animation.interpolate({
         inputRange: [0, 1],
-        outputRange: ["#aaa", "#5ad2f4"]
+        outputRange: ["#aaa", "#E54F6D"]
     })
 
     return (
         <Container>
 
-            <StatusBar barStyle="light-content" backgroundColor={payWithAccount ? '#5ad2f4' : '#aaa'} />
+            <StatusBar barStyle="light-content" backgroundColor={payWithAccount ? '#E54F6D' : '#aaa'} />
 
             <Animated.View style={{ backgroundColor: boxInterpolation }}>
                 <Header>
@@ -88,7 +88,7 @@ export default () => {
 
             <SubHeader>
                 <DefaultText font="16px" mTop="0px" color="#000">Use balance to pay</DefaultText>
-                <Switch thumbColor={payWithAccount ? '#5ad2f4' : '#eee'} value={payWithAccount} onChange={handleAnimation} />
+                <Switch thumbColor={payWithAccount ? '#E54F6D' : '#eee'} value={payWithAccount} onChange={handleAnimation} />
             </SubHeader>
 
             <MainContent>
@@ -105,14 +105,14 @@ export default () => {
                 </CardView>
 
                 <CardView mTop="5px" height="70px">
-                    <PlusCircleIcon width="30px" height="30px" fill="#1fa1c7" />
-                    <DefaultText mLeft="10px" color="#1fa1c7" font="16px">Add credit card</DefaultText>
+                    <PlusCircleIcon width="30px" height="30px" fill="#DF274C" />
+                    <DefaultText mLeft="10px" color="#DF274C" font="16px">Add credit card</DefaultText>
                 </CardView>
 
                 <CupomBtn underlayColor="transparent" onPress={() => console.log('olá mundo')}>
                     <>
-                        <CupomIcon width="25px" height="25px" fill="#1fa1c7" />
-                        <DefaultText deco="underline" mLeft="10px" font="18px" color="#1fa1c7">Use promotional code</DefaultText>
+                        <CupomIcon width="25px" height="25px" fill="#DF274C" />
+                        <DefaultText deco="underline" mLeft="10px" font="18px" color="#DF274C">Use promotional code</DefaultText>
                     </>
                 </CupomBtn>
             </MainContent>

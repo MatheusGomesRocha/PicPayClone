@@ -19,7 +19,7 @@ import {
 export default () => {
     return (
         <Container>
-            <StatusBar barStyle="light-content" backgroundColor="#1fa1c7" />
+            <StatusBar barStyle="light-content" backgroundColor="#DF274C" />
 
             <DefaultText font="16px" color="#999" mTop="15px">My account</DefaultText>
 
@@ -34,12 +34,12 @@ export default () => {
                 </CenterView>
             </AccountView>
 
-            <DefaultBtn bgColor="#1fa1c7">
+            <DefaultBtn bgColor="#DF274C" underlayColor="#BE1C3D">
                 <DefaultText color="#fff">Change bank account</DefaultText>
             </DefaultBtn>
 
-            <DefaultBtn border="1px solid red">
-                <DefaultText color="red">Remove this account</DefaultText>
+            <DefaultBtn border="1px solid #BE1C3D" underlayColor="#BE1C3D">
+                <DefaultText color="#BE1C3D">Remove this account</DefaultText>
             </DefaultBtn>
             
         </Container>

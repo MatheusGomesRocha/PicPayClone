@@ -16,7 +16,7 @@ import {
 export default () => {
     return (
         <Container>
-            <StatusBar barStyle="light-content" backgroundColor="#1fa1c7" />
+            <StatusBar barStyle="light-content" backgroundColor="#DF274C" />
 
             <DivInput>
                 <DefaultText color="#ccc">Email</DefaultText>
@@ -25,7 +25,7 @@ export default () => {
 
             <DefaultText color="#aaa" mTop="15px">You can use this email address to login or recover your password</DefaultText>
 
-            <DefaultBtn underlayColor="#1D94B8" >
+            <DefaultBtn underlayColor="#BE1C3D" >
                 <DefaultText enabled={true} color="#fff" font="16px">Update</DefaultText>
             </DefaultBtn>
         </Container>

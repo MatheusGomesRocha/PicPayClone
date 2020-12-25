@@ -27,7 +27,7 @@ let array = [
 export default () => {
     return (
         <Container>
-            <StatusBar barStyle="light-content" backgroundColor="#1fa1c7" />
+            <StatusBar barStyle="light-content" backgroundColor="#DF274C" />
 
             {array.map((item, k) => (
                 <ItemView key={k}>

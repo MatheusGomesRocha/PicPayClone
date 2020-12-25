@@ -76,20 +76,20 @@ export default () => {
                     <ModalView>
                         <ModalItemView>
                             <ModalBtn onPress={ModalNavigateForgot} underlayColor="#ddd">
-                                <DefaultText bolder="bold" color="#1fa1c7">Forgot password</DefaultText>
+                                <DefaultText bolder="bold" color="#000">Forgot password</DefaultText>
                             </ModalBtn>
                             <ModalBtn onPress={ModalNavigateRedefine} underlayColor="#ddd">
-                                <DefaultText bolder="bold" color="#1fa1c7">Reset password</DefaultText>
+                                <DefaultText bolder="bold" color="#000">Reset password</DefaultText>
                             </ModalBtn>
                             <ModalBtn underlayColor="#ddd" onPress={() => setModalVisible(false)}>
-                                <DefaultText deco="underline" color="red">Cancel</DefaultText>
+                                <DefaultText deco="underline" color="#DF274C">Cancel</DefaultText>
                             </ModalBtn>
                         </ModalItemView>
                     </ModalView>
                 </Modal>
 
                 <BtnAbsolute onPress={() => console.log('Olá')}>
-                    <DefaultText font="16px" bolder="bold" color="#1fa1c7">Help</DefaultText>
+                    <DefaultText font="16px" bolder="bold" color="#DF274C">Help</DefaultText>
                 </BtnAbsolute>
 
                 <Header>
@@ -98,7 +98,7 @@ export default () => {
                     <DefaultText font="16px" color="#aaa">Matheus Gomes</DefaultText>
 
                     <TextBtn onPress={() => console.log('olá')}>
-                        <DefaultText color="#1fa1c7">See my profile</DefaultText>
+                        <DefaultText color="#DF274C">See my profile</DefaultText>
                     </TextBtn>
 
                     <TextAbsolute>My Account</TextAbsolute>
@@ -122,7 +122,7 @@ export default () => {
 
                     <DefaultBlock>
                         <BlockText>
-                            <DefaultText bolder="bold" color="#1fa1c7">Promotions</DefaultText>
+                            <DefaultText bolder="bold" color="#DF274C">Promotions</DefaultText>
                         </BlockText>
                         <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Use promotional code</DefaultText>
@@ -131,7 +131,7 @@ export default () => {
 
                     <DefaultBlock>
                         <BlockText>
-                            <DefaultText bolder="bold" color="#1fa1c7">To my business</DefaultText>
+                            <DefaultText bolder="bold" color="#DF274C">To my business</DefaultText>
                         </BlockText>
                         <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Bankidô PRO</DefaultText>
@@ -140,7 +140,7 @@ export default () => {
 
                     <DefaultBlock>
                         <BlockText>
-                            <DefaultText bolder="bold" color="#1fa1c7">Configuration</DefaultText>
+                            <DefaultText bolder="bold" color="#DF274C">Configuration</DefaultText>
                         </BlockText>
                         <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">Notifications</DefaultText>
@@ -152,7 +152,7 @@ export default () => {
 
                     <DefaultBlock>
                         <BlockText>
-                            <DefaultText bolder="bold" color="#1fa1c7">General</DefaultText>
+                            <DefaultText bolder="bold" color="#DF274C">General</DefaultText>
                         </BlockText>
                         <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">About Bankidô</DefaultText>

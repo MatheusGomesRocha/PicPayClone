@@ -15,7 +15,7 @@ import {
 export default () => {
     return (
         <Container>
-            <StatusBar barStyle="light-content" backgroundColor="#1fa1c7" />
+            <StatusBar barStyle="light-content" backgroundColor="#DF274C" />
 
             <DivInput>
                 <DefaultText color="#ccc">Name</DefaultText>
@@ -32,8 +32,8 @@ export default () => {
                 <Input defaultValue="02/04/2001" />
             </DivInput>
 
-            <DefaultBtn underlayColor="#1D94B8" onPress={() => HandleEdit()}>
-                <DefaultText enabled={true} color="#fff" font="16px">Update</DefaultText>
+            <DefaultBtn underlayColor="#BE1C3D" onPress={() => HandleEdit()}>
+                <DefaultText enabled={true} color="#fff" font="18px">Update</DefaultText>
             </DefaultBtn>
 
         </Container>

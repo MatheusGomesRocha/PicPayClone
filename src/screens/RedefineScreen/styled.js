@@ -29,7 +29,7 @@ export const Input = styled.TextInput`
 export const BtnEye = styled.TouchableOpacity``;
 
 export const DefaultBtn = styled.TouchableHighlight`
-    background-color: #1fa1c7;
+    background-color: #DF274C;
     margin-top: 30px;
     height: 50px;
     border-radius: 25px;

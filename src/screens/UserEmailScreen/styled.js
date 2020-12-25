@@ -20,7 +20,7 @@ export const Input = styled.TextInput`
 
 export const DefaultBtn = styled.TouchableHighlight`
     margin-top: 30px;
-    background-color: #1fa1c7;
+    background-color: #DF274C;
     width: 100%;
     height: 50px;
     border-radius: 25px;

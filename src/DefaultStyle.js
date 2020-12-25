@@ -1,7 +1,7 @@
-export const color = '#1fa1c7';
-export const underlay = '#1D94B8';
+export const color = '#DF274C';
+export const underlay = '#BE1C3D';
 
-export const backBlue = '#5ad2f4';
+export const backPink = '#E54F6D';
 
 export const white = '#fff';
 

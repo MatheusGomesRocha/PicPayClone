@@ -39,7 +39,7 @@ export const BtnCircle = styled.View`
     width: 60px;
     height: 60px;
     border-radius: 35px;
-    background-color: #1fa1c7;
+    background-color: #DF274C;
     align-items: center;
     justify-content: center;
 `;

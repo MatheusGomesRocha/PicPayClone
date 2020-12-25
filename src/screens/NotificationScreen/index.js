@@ -44,7 +44,7 @@ export default () => {
                         <Header>
                             <DefaultText bolder="bold" font="18px">Notifications</DefaultText>
                             <BtnConfig onPress={() => console.log('Olá')}>
-                                <DefaultText font="16px" bolder="bold" color="#1fa1c7">Configuration</DefaultText>
+                                <DefaultText font="16px" bolder="bold" color="#DF274C">Configuration</DefaultText>
                             </BtnConfig>
                         </Header>
                     </>

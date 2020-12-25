@@ -45,7 +45,7 @@ export default () => {
     return (
         <Container>
             <Header>
-                <Qr width="25px" height="25px" fill="#1fa1c7" />
+                <Qr width="25px" height="25px" fill="#DF274C" />
                 <DefaultText mLeft="15px" bolder="bold" font="20px">Transactions</DefaultText>
             </Header>
 
@@ -56,7 +56,7 @@ export default () => {
                         <BigItem key={k} onPress={() => console.log('olá mundo')} underlayColor="#ddd" >
                             <>
                                 <BigItemIcon>
-                                    <item.Icon width="20px" height="20px" fill="#1fa1c7" />
+                                    <item.Icon width="20px" height="20px" fill="#DF274C" />
                                 </BigItemIcon>
                                 <BigItemContent>
                                     <DefaultText bolder="bold" font="16px">{item.text}</DefaultText>
@@ -72,7 +72,7 @@ export default () => {
                         {smallItem.map((item, k) => (
                             <SmallItem mRight={item.margin == false ? '0' : '10px'} key={k} onPress={() => console.log('olá mundo')} underlayColor="#ddd" >
                                 <>
-                                    <item.Icon width="20px" height="20px" fill="#1fa1c7" />
+                                    <item.Icon width="20px" height="20px" fill="#DF274C" />
                                     <DefaultText>{item.text}</DefaultText>
                                 </>
                             </SmallItem>

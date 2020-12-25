@@ -16,6 +16,11 @@ export const DivInput = styled.View`
     align-items: center;
     margin-top: 30px;
 `;
+export const LineDiv = styled.View`
+    padding: 0 15px 0 10px;
+    borderRightWidth: 1px;
+    borderRightColor: #aaa;
+`;
 export const Input = styled.TextInput`
     flex: 1;
     padding-left: 20px;
@@ -23,7 +28,7 @@ export const Input = styled.TextInput`
 
 
 export const DefaultBtn = styled.TouchableHighlight`
-    background-color: #1fa1c7;
+    background-color: #DF274C;
     margin-top: 30px;
     height: 50px;
     border-radius: 25px;

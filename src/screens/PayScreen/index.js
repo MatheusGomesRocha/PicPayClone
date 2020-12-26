@@ -80,9 +80,6 @@ export default () => {
                     </RowItem>
                 </Scroll>
 
-
-
-
             </MainContent>
         </Container>
     );

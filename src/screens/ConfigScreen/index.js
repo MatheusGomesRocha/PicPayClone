@@ -142,7 +142,7 @@ export default () => {
                         <BlockText>
                             <DefaultText bolder="bold" color="#DF274C">Configuration</DefaultText>
                         </BlockText>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => navigation.navigate('notification_alert')} height="60px">
                             <DefaultText bolder="bold">Notifications</DefaultText>
                         </DefaultBtn>
                         <DefaultBtn underlayColor="#ddd" onPress={() => setModalVisible(true)} height="60px">

@@ -157,7 +157,7 @@ export default () => {
                         <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
                             <DefaultText bolder="bold">About Bankidô</DefaultText>
                         </DefaultBtn>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => navigation.navigate('question')} height="60px">
                             <DefaultText bolder="bold">Need help?</DefaultText>
                         </DefaultBtn>
                     </DefaultBlock>

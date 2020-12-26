@@ -9,6 +9,7 @@ import FavoriteScreen from '../screens/FavoriteScreen';
 import ForgotScreen from '../screens/ForgotScreen';
 import RedefineScreen from '../screens/RedefineScreen';
 import NotificationAlertScreen from '../screens/NotificationAlertScreen';
+import QuestionScreen from '../screens/QuestionScreen';
 
 const HomeStack = createStackNavigator();
 
@@ -24,6 +25,7 @@ export default () => {
             <HomeStack.Screen name="forgot" component={ForgotScreen} options={{headerTitle: 'Forgot Password', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#DF274C'} }}/>
             <HomeStack.Screen name="redefine" component={RedefineScreen} options={{headerTitle: 'Reset Password', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#DF274C'} }}/>
             <HomeStack.Screen name="notification_alert" component={NotificationAlertScreen} options={{headerTitle: 'Notifications', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#DF274C'} }}/>
+            <HomeStack.Screen name="question" component={QuestionScreen} options={{headerTitle: 'Questions', headerTintColor: '#fff', headerTitleAlign: 'center', headerStyle: {backgroundColor: '#DF274C'} }}/>
         </HomeStack.Navigator>
     );
 }

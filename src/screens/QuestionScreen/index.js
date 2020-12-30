@@ -8,7 +8,7 @@ import {
     Flat,
 
     ArrayItem,
-} from 'styled';
+} from './styled';
 
 let array = [
     { id: 1, title: 'PIX', content: 'How PIX works?' },

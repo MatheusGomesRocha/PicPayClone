@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "109640388042",
+    "project_id": "bankido-3eafc",
+    "storage_bucket": "bankido-3eafc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109640388042:android:bad8c41a3d1cc282ca1333",
+        "android_client_info": {
+          "package_name": "com.picpayclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109640388042-ua3br80mtn8r0c876571ps0beiliefci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0O5bRkoprSPPj5P1RL4nZL19PKsulP0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109640388042-ua3br80mtn8r0c876571ps0beiliefci.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "109640388042-levmjqje545camcjd455q3o8m18uhauo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.picpayclone"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

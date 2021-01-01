@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Search from '../../assets/svg/search.svg';
 import Star from '../../assets/svg/star.svg';
 
@@ -35,12 +35,22 @@ let arrayCommon = [
 
 
 export default () => {
+    const [userSearch, setUserSearch] = useState();
+
+    // const filterData = arrayPix.filter((item) => {              // Array que será mostrado, pegando o valor digitado do usuário e filtrando para mostrar os que tem
+    //     if(userSearch) {
+    //         return item.name.indexOf(userSearch) >=0
+    //     } else {
+    //         return arrayPix;
+    //     }
+    // })
+
     return (
         <Container>
             <Scroll showsVerticalScrollIndicator={false}>
                 <DivInput>
                     <Search width="25px" height="25px" fill="#DF274C"/>
-                    <Input placeholder="What's your question?"/>
+                    <Input onSubmitEditing={() => console.log(userSearch)} placeholder="What's your question?" value={userSearch} onChangeText={us=>setUserSearch(us)}/>
                 </DivInput>
 
                 <ArrayDiv>

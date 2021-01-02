@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import UserSvg from "../../assets/svg/user_circle.svg";
 import Lock from "../../assets/svg/lock.svg";
+import Id from "../../assets/svg/id.svg";
+import Birthday from "../../assets/svg/birthday.svg";
 import EyeOff from "../../assets/svg/eye_off.svg";
 import EyeOn from "../../assets/svg/eye_on.svg";
 
@@ -32,7 +34,7 @@ export default () => {
 
             <MainView>
                 <TopView>
-                    <DefaultText font={"24px"} bolder={"bold"}>Create your account</DefaultText>
+                    <DefaultText font={"24px"} bolder={"bold"} color={"#DF274C"}>Create your account</DefaultText>
                     <DefaultText mTop={"5px"} color={"#aaa"} font={"16px"}>
                         Do not worry, your data are safe with us
                     </DefaultText>
@@ -47,33 +49,34 @@ export default () => {
 
                 <InputView>
                     <LineDiv>
-                        <Lock width="25" height="25px" fill="#DF274C"/>
+                        <Id width="25px" height="25px" fill="#DF274C"/>
                     </LineDiv>
                     <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="CPF"/>
                 </InputView>
 
                 <InputView>
                     <LineDiv>
-                        <Lock width="25" height="25px" fill="#DF274C"/>
+                        <Birthday width="25px" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="Data of Birth"/>
+                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="Date of Birth"/>
                 </InputView>
 
                 <InputView>
                     <LineDiv>
-                        <Lock width="25" height="25px" fill="#DF274C"/>
+                        <Lock width="25px" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input secureTextEntry={securePass} onSubmitEditing={() => console.log('olá mundo')} placeholder="Password"/>
+                    <Input secureTextEntry={securePass} onSubmitEditing={() => console.log('olá mundo')}
+                           placeholder="Password"/>
                     {securePass ?
                         <>
                             <BtnEye onPress={() => setSecurePass(false)}>
-                                <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                                <EyeOff fill="#000" width={30} height={30} style={{marginRight: 10}}/>
                             </BtnEye>
                         </>
                         :
                         <>
                             <BtnEye onPress={() => setSecurePass(true)}>
-                                <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                                <EyeOn fill="#000" width={30} height={30} style={{marginRight: 10}}/>
                             </BtnEye>
                         </>
                     }
@@ -81,26 +84,27 @@ export default () => {
 
                 <InputView>
                     <LineDiv>
-                        <Lock width="25" height="25px" fill="#DF274C"/>
+                        <Lock width="25px" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input secureTextEntry={securePass1} onSubmitEditing={() => console.log('olá mundo')} placeholder="Confirm password"/>
+                    <Input secureTextEntry={securePass1} onSubmitEditing={() => console.log('olá mundo')}
+                           placeholder="Confirm password"/>
                     {securePass1 ?
                         <>
                             <BtnEye onPress={() => setSecurePass1(false)}>
-                                <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                                <EyeOff fill="#000" width={30} height={30} style={{marginRight: 10}}/>
                             </BtnEye>
                         </>
                         :
                         <>
                             <BtnEye onPress={() => setSecurePass1(true)}>
-                                <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                                <EyeOn fill="#000" width={30} height={30} style={{marginRight: 10}}/>
                             </BtnEye>
                         </>
                     }
                 </InputView>
 
                 <DefaultBtn underlayColor={"#BE1C3D"}>
-                    <DefaultText color={"#fff"} font={"18px"}>Login</DefaultText>
+                    <DefaultText color={"#fff"} font={"18px"}>Create</DefaultText>
                 </DefaultBtn>
 
                 <DefaultText style={{textAlign: 'center'}} color={"#aaa"} font={"16px"} mTop={"20px"}>

@@ -48,9 +48,7 @@ export const BottomView = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
-    
 `;
 export const TextBtn = styled.TouchableOpacity`
-    margin-top: 20px;
+    margin-top: 15px;
 `;

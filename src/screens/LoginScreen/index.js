@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import UserSvg from "../../assets/svg/user_circle.svg";
 import Lock from "../../assets/svg/lock.svg";
+import {useNavigation} from '@react-navigation/native';
 
 import {DefaultText} from '../../components/DefaultText';
 
@@ -25,13 +26,15 @@ import EyeOn from "../../assets/svg/eye_on.svg";
 export default () => {
     const [securePass, setSecurePass] = useState(true);
 
+    const navigation = useNavigation();
+
     return (
         <Container>
             <StatusBar barStyle="dark-content" backgroundColor="#fff"/>
 
             <MainView>
                 <TopView>
-                    <DefaultText font={"24px"} bolder={"bold"}>Your identification</DefaultText>
+                    <DefaultText font={"24px"} bolder={"bold"} color={"#DF274C"}>Your identification</DefaultText>
                     <DefaultText mTop={"5px"} color={"#aaa"} font={"16px"}>
                         Do not worry, your data are safe with us
                     </DefaultText>
@@ -66,6 +69,10 @@ export default () => {
                 <DefaultBtn underlayColor={"#BE1C3D"}>
                     <DefaultText color={"#fff"} font={"18px"}>Login</DefaultText>
                 </DefaultBtn>
+
+                <TextBtn onPress={() => navigation.navigate('forgot')}>
+                    <DefaultText color={"#DF274C"} deco={"underline"} bolder={"bold"} font={"16px"}>Forgot your password?</DefaultText>
+                </TextBtn>
 
             </MainView>
         </Container>

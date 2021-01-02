@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import UserSvg from "../../assets/svg/user_circle.svg";
 import Lock from "../../assets/svg/lock.svg";
 
@@ -18,8 +18,13 @@ import {
 } from "./styled";
 
 import {StatusBar} from "react-native";
+import {BtnEye} from "../RedefineScreen/styled";
+import EyeOff from "../../assets/svg/eye_off.svg";
+import EyeOn from "../../assets/svg/eye_on.svg";
 
 export default () => {
+    const [securePass, setSecurePass] = useState(true);
+
     return (
         <Container>
             <StatusBar barStyle="dark-content" backgroundColor="#fff"/>
@@ -42,16 +47,25 @@ export default () => {
                     <LineDiv>
                         <Lock width="25" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="password"/>
+                    <Input secureTextEntry={securePass} onSubmitEditing={() => console.log('olá mundo')} placeholder="password"/>
+                    {securePass ?
+                        <>
+                            <BtnEye onPress={() => setSecurePass(false)}>
+                                <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            </BtnEye>
+                        </>
+                        :
+                        <>
+                            <BtnEye onPress={() => setSecurePass(true)}>
+                                <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            </BtnEye>
+                        </>
+                    }
                 </InputView>
 
                 <DefaultBtn underlayColor={"#BE1C3D"}>
                     <DefaultText color={"#fff"} font={"18px"}>Login</DefaultText>
                 </DefaultBtn>
-
-                <DefaultText style={{textAlign: 'center'}} color={"#aaa"} font={"16px"} mTop={"20px"}>
-                    When you creating a account in our App, you agree with our Terms and Privacy Policy
-                </DefaultText>
 
             </MainView>
         </Container>

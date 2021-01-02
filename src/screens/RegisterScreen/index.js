@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import UserSvg from "../../assets/svg/user_circle.svg";
 import Lock from "../../assets/svg/lock.svg";
+import EyeOff from "../../assets/svg/eye_off.svg";
+import EyeOn from "../../assets/svg/eye_on.svg";
 
 import {DefaultText} from '../../components/DefaultText';
 
@@ -18,31 +20,83 @@ import {
 } from "./styled";
 
 import {StatusBar} from "react-native";
+import {BtnEye} from "../RedefineScreen/styled";
 
 export default () => {
+    const [securePass, setSecurePass] = useState(true);
+    const [securePass1, setSecurePass1] = useState(true);
+
     return (
         <Container>
             <StatusBar barStyle="dark-content" backgroundColor="#fff"/>
 
             <MainView>
                 <TopView>
-                    <DefaultText font={"24px"} bolder={"bold"}>Your identification</DefaultText>
+                    <DefaultText font={"24px"} bolder={"bold"}>Create your account</DefaultText>
                     <DefaultText mTop={"5px"} color={"#aaa"} font={"16px"}>
                         Do not worry, your data are safe with us
                     </DefaultText>
                 </TopView>
+
                 <InputView>
                     <LineDiv>
                         <UserSvg width="25px" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="User"/>
+                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="E-mail"/>
                 </InputView>
 
                 <InputView>
                     <LineDiv>
                         <Lock width="25" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="password"/>
+                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="CPF"/>
+                </InputView>
+
+                <InputView>
+                    <LineDiv>
+                        <Lock width="25" height="25px" fill="#DF274C"/>
+                    </LineDiv>
+                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="Data of Birth"/>
+                </InputView>
+
+                <InputView>
+                    <LineDiv>
+                        <Lock width="25" height="25px" fill="#DF274C"/>
+                    </LineDiv>
+                    <Input secureTextEntry={securePass} onSubmitEditing={() => console.log('olá mundo')} placeholder="Password"/>
+                    {securePass ?
+                        <>
+                            <BtnEye onPress={() => setSecurePass(false)}>
+                                <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            </BtnEye>
+                        </>
+                        :
+                        <>
+                            <BtnEye onPress={() => setSecurePass(true)}>
+                                <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            </BtnEye>
+                        </>
+                    }
+                </InputView>
+
+                <InputView>
+                    <LineDiv>
+                        <Lock width="25" height="25px" fill="#DF274C"/>
+                    </LineDiv>
+                    <Input secureTextEntry={securePass1} onSubmitEditing={() => console.log('olá mundo')} placeholder="Confirm password"/>
+                    {securePass1 ?
+                        <>
+                            <BtnEye onPress={() => setSecurePass1(false)}>
+                                <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            </BtnEye>
+                        </>
+                        :
+                        <>
+                            <BtnEye onPress={() => setSecurePass1(true)}>
+                                <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                            </BtnEye>
+                        </>
+                    }
                 </InputView>
 
                 <DefaultBtn underlayColor={"#BE1C3D"}>

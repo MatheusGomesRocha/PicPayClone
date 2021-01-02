@@ -1,5 +1,6 @@
 import React from 'react';
 import Bg from '../../assets/img/back_img.jpg';
+import {useNavigation} from '@react-navigation/native';
 
 import {DefaultText} from '../../components/DefaultText';
 
@@ -15,6 +16,8 @@ import {
 import {StatusBar} from "react-native";
 
 export default () => {
+    const navigation = useNavigation();
+
     return (
         <Container>
             <StatusBar barStyle="light-content" backgroundColor="rgba(0, 0, 0, 0.5)"/>
@@ -25,7 +28,8 @@ export default () => {
                                  font={"24px"}>
                         With Bankidô, you payment it's more easy and safe
                     </DefaultText>
-                    <DefaultBtn underlayColor={"#BE1C3D"} border={"none"} bg={"#DF274C"}>
+                    <DefaultBtn onPress={() => navigation.navigate('login')} underlayColor={"#BE1C3D"} border={"none"}
+                                bg={"#DF274C"}>
                         <DefaultText font={"16px"} color={'#fff'}>Login</DefaultText>
                     </DefaultBtn>
 

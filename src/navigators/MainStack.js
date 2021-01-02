@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import PreloadScreen from '../screens/PreloadScreen';
+import LoginScreen from '../screens/LoginScreen';
 import AppTab from './AppTab';
 import UserBankScreen from '../screens/UserBankScreen';
 import UserDataScreen from '../screens/UserDataScreen';
@@ -21,6 +22,8 @@ export default () => {
     return (
         <HomeStack.Navigator>
             <HomeStack.Screen name="preload" component={PreloadScreen} options={{headerTitle: null, headerTransparent: true,}}/>
+            <HomeStack.Screen name="login" component={LoginScreen} options={{headerTitle: null, headerTransparent: true,}}/>
+
             <HomeStack.Screen name="apptab" component={AppTab} options={{headerTitle: null, headerTransparent: true,}}/>
             <HomeStack.Screen name="user_bank" component={UserBankScreen} options={{
                 headerTitle: 'User Bank',

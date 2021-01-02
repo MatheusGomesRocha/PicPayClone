@@ -33,7 +33,7 @@ export default () => {
                         <DefaultText font={"16px"} color={'#fff'}>Login</DefaultText>
                     </DefaultBtn>
 
-                    <DefaultBtn underlayColor={"#fff"}>
+                    <DefaultBtn onPress={() => navigation.navigate('register')} underlayColor={"#fff"}>
                         <DefaultText font={"16px"} color={'#fff'}>Register</DefaultText>
                     </DefaultBtn>
                 </MainView>

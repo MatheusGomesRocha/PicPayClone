@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import UserSvg from "../../assets/svg/user_circle.svg";
 import Lock from "../../assets/svg/lock.svg";
 import {useNavigation} from '@react-navigation/native';
+import {connect} from 'react-redux';
+import Api from '../../Api';
 
 import {DefaultText} from '../../components/DefaultText';
 
@@ -23,10 +25,17 @@ import {BtnEye} from "../RedefineScreen/styled";
 import EyeOff from "../../assets/svg/eye_off.svg";
 import EyeOn from "../../assets/svg/eye_on.svg";
 
-export default () => {
+function Login(props) {
     const [securePass, setSecurePass] = useState(true);
 
+    const [user, setUser] = useState();
+    const [pass, setPass] = useState();
+
     const navigation = useNavigation();
+
+    const doLogin = () => {
+        Api.login(user, pass, navigation, props.setEmail);
+    }
 
     return (
         <Container>
@@ -43,38 +52,48 @@ export default () => {
                     <LineDiv>
                         <UserSvg width="25px" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input onSubmitEditing={() => console.log('olá mundo')} placeholder="User"/>
+                    <Input value={user} onChangeText={u => setUser(u)} placeholder="User"/>
                 </InputView>
 
                 <InputView>
                     <LineDiv>
                         <Lock width="25" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input secureTextEntry={securePass} onSubmitEditing={() => console.log('olá mundo')} placeholder="password"/>
+                    <Input value={pass} onChangeText={p => setPass(p)} secureTextEntry={securePass}
+                           placeholder="password"/>
                     {securePass ?
                         <>
                             <BtnEye onPress={() => setSecurePass(false)}>
-                                <EyeOff fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                                <EyeOff fill="#000" width={30} height={30} style={{marginRight: 10}}/>
                             </BtnEye>
                         </>
                         :
                         <>
                             <BtnEye onPress={() => setSecurePass(true)}>
-                                <EyeOn fill="#000" width={30} height={30} style={{ marginRight: 10 }} />
+                                <EyeOn fill="#000" width={30} height={30} style={{marginRight: 10}}/>
                             </BtnEye>
                         </>
                     }
                 </InputView>
 
-                <DefaultBtn underlayColor={"#BE1C3D"}>
+                <DefaultBtn onPress={doLogin} underlayColor={"#BE1C3D"}>
                     <DefaultText color={"#fff"} font={"18px"}>Login</DefaultText>
                 </DefaultBtn>
 
                 <TextBtn onPress={() => navigation.navigate('forgot')}>
-                    <DefaultText color={"#DF274C"} deco={"underline"} bolder={"bold"} font={"16px"}>Forgot your password?</DefaultText>
+                    <DefaultText color={"#DF274C"} deco={"underline"} bolder={"bold"} font={"16px"}>Forgot your
+                        password?</DefaultText>
                 </TextBtn>
 
             </MainView>
         </Container>
     );
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setEmail: (email) => dispatch({type: 'SET_EMAIL', payload: {email}})
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Login);

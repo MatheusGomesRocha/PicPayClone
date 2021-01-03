@@ -6,10 +6,13 @@ export const Container = styled.SafeAreaView`
     padding: 0 5%;
 `;
 
+export const Scroll = styled.ScrollView``;
+
 export const MainView = styled.View`
     flex: 1;
     align-items: center;
     justify-content: center;
+    padding: 50px 0;
 `;
 export const TopView = styled.View`
     align-items: center;
@@ -38,11 +41,11 @@ export const Input = styled.TextInput`
 export const DefaultBtn = styled.TouchableHighlight`
     height: 55px;
     width: 100%;
-    background-color: #DF274C;
+    background-color: ${props=>props.bgColor};
     border-radius: 30px;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 20px;
 `;
 export const BottomView = styled.View`
     flex-direction: row;

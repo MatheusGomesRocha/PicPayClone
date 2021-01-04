@@ -44,10 +44,10 @@ export default {
             })
     },
 
-    login: (user, pass, navigation, setUser) => {
+    login: (email, pass, navigation, setEmail, setUser, setName) => {
         const res =
             auth()
-                .signInWithEmailAndPassword(user, pass)
+                .signInWithEmailAndPassword(email, pass)
                 .then(() => {
                     navigation.reset({
                         routes: [
@@ -55,7 +55,7 @@ export default {
                         ]
                     });
 
-                    setUser(user)
+                    setEmail(email)
                 }).catch(error => {
                     if(error) {
                         Alert.alert(
@@ -69,4 +69,21 @@ export default {
                     }
             })
     },
+
+    getUserLogin: (email, setName, setUser) => {
+        let list = [];
+
+        return firestore()
+            .collection('users')
+            .where('email', '==', email)
+            .get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(documentSnapshot => {
+                    let data = documentSnapshot.data();
+
+                    setName(data.name);
+                    setUser(data.user);
+                })
+            })
+    }
 }

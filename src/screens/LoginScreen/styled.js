@@ -38,7 +38,7 @@ export const Input = styled.TextInput`
 export const DefaultBtn = styled.TouchableHighlight`
     height: 55px;
     width: 100%;
-    background-color: #DF274C;
+    background-color: ${props=>props.bgColor};
     border-radius: 30px;
     align-items: center;
     justify-content: center;

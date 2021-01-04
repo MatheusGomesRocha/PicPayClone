@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import UserSvg from "../../assets/svg/user_circle.svg";
+import EmailSvg from "../../assets/svg/email.svg";
 import Lock from "../../assets/svg/lock.svg";
 import {useNavigation} from '@react-navigation/native';
 import {connect} from 'react-redux';
@@ -28,13 +28,13 @@ import EyeOn from "../../assets/svg/eye_on.svg";
 function Login(props) {
     const [securePass, setSecurePass] = useState(true);
 
-    const [user, setUser] = useState();
+    const [email, setEmail] = useState();
     const [pass, setPass] = useState();
 
     const navigation = useNavigation();
 
     const doLogin = () => {
-        Api.login(user, pass, navigation, props.setEmail);
+        Api.login(email, pass, navigation, props.setEmail);
     }
 
     return (
@@ -50,9 +50,10 @@ function Login(props) {
                 </TopView>
                 <InputView>
                     <LineDiv>
-                        <UserSvg width="25px" height="25px" fill="#DF274C"/>
+                        <EmailSvg width="25px" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input value={user} onChangeText={u => setUser(u)} placeholder="User"/>
+                    <Input keyboardType={"email-address"} value={email} onChangeText={e => setEmail(e)}
+                           placeholder="Email"/>
                 </InputView>
 
                 <InputView>
@@ -76,7 +77,8 @@ function Login(props) {
                     }
                 </InputView>
 
-                <DefaultBtn onPress={doLogin} underlayColor={"#BE1C3D"}>
+                <DefaultBtn bgColor={email && pass ? '#DF274C' : '#ccc'}
+                            disabled={email && pass ? false : true} onPress={doLogin} underlayColor={"#BE1C3D"}>
                     <DefaultText color={"#fff"} font={"18px"}>Login</DefaultText>
                 </DefaultBtn>
 
@@ -92,7 +94,7 @@ function Login(props) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setEmail: (email) => dispatch({type: 'SET_EMAIL', payload: {email}})
+        setEmail: (email) => dispatch({type: 'SET_EMAIL', payload: {email}}),
     }
 }
 

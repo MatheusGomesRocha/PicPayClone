@@ -1,13 +1,11 @@
 import React from 'react';
 
 const initialState = {
-    name: '',
     email: '',
-
 }
 
 export default (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'SET_EMAIL':
             return {...state, email: action.payload.email};
             break;

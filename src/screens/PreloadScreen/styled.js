@@ -3,6 +3,12 @@ import styled from 'styled-components/native';
 export const Container = styled.SafeAreaView`
     flex: 1;
 `;
+export const PreloadView = styled.SafeAreaView`
+    flex: 1;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+`;
 
 export const Img = styled.ImageBackground`
     flex: 1;

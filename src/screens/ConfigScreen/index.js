@@ -7,7 +7,7 @@ import Api from '../../Api';
 
 import {DefaultText} from '../../components/DefaultText';
 
-import {StatusBar, Modal} from 'react-native';
+import {StatusBar, Modal, ActivityIndicator} from 'react-native';
 
 import {
     Container,
@@ -35,12 +35,6 @@ import {
     BlockText,
 } from './styled';
 
-let arrayBtnBig = [
-    {id: '1', content: 'Bankidô', subContent: '@matheus.gomes1039', screen: 'user_bank'},
-    {id: '2', content: 'Personal data', subContent: 'Name, CPF e Data of birth', screen: 'user_data'},
-    {id: '3', content: 'E-mail', subContent: 'mat**********92@hotmail.com', screen: 'user_email'},
-];
-
 let arrayBtn = [
     {id: '1', content: 'Bank Account', screen: 'bank_account'},
     {id: '2', content: 'Id validation', screen: 'id_validation'},
@@ -51,11 +45,18 @@ let arrayBtn = [
 
 function ConfigScreen(props) {
     const [modalVisible, setModalVisible] = useState(false);
+    const [userLogin, setUserLogin] = useState(false);
     const [user, setUser] = useState();
     const [name, setName] = useState();
 
     const navigation = useNavigation();
-    const email = useSelector(state=>state.user.email);
+    const email = useSelector(state => state.user.email);
+
+    let arrayBtnBig = [
+        {id: '1', content: 'Bankidô', subContent: user, screen: 'user_bank'},
+        {id: '2', content: 'Personal data', subContent: 'Name, CPF e Data of birth', screen: 'user_data'},
+        {id: '3', content: 'E-mail', subContent: email, screen: 'user_email'},
+    ];
 
     const ModalNavigateForgot = () => {
         navigation.navigate('forgot');
@@ -68,8 +69,15 @@ function ConfigScreen(props) {
     }
 
     useEffect(() => {
-        Api.getUserLogin(email, setName, setUser );
+        Api.getUserLogin(email, setName, setUser);
+    }, [])
 
+    useEffect(() => {
+        if(email) {
+            setTimeout(() => {
+                setUserLogin(true)
+            }, 1000)
+        }
     }, [])
 
     const SignOut = () => {    // Função de Logout
@@ -115,9 +123,16 @@ function ConfigScreen(props) {
                 </BtnAbsolute>
 
                 <Header>
-                    <UserImg source={img}/>
-                    <DefaultText font="20px" bolder="bold">{user}</DefaultText>
-                    <DefaultText font="16px" color="#aaa">{name}</DefaultText>
+                    {userLogin ?
+                        <>
+                            <UserImg source={img}/>
+                            <DefaultText font="20px" bolder="bold">{user}</DefaultText>
+                            <DefaultText font="16px" color="#aaa">{name}</DefaultText>
+                        </>
+                        :
+                        <ActivityIndicator style={{marginBottom: 10}} size="large" color="#000" />
+                        }
+
 
                     <TextBtn onPress={() => console.log('olá')}>
                         <DefaultText color="#DF274C">See my profile</DefaultText>

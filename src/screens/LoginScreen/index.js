@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, createRef} from 'react';
 import EmailSvg from "../../assets/svg/email.svg";
 import Lock from "../../assets/svg/lock.svg";
 import {useNavigation} from '@react-navigation/native';
@@ -27,9 +27,10 @@ import EyeOn from "../../assets/svg/eye_on.svg";
 
 function Login(props) {
     const [securePass, setSecurePass] = useState(true);
-
     const [email, setEmail] = useState();
     const [pass, setPass] = useState();
+
+    const inputPass = createRef();
 
     const navigation = useNavigation();
 
@@ -52,7 +53,8 @@ function Login(props) {
                     <LineDiv>
                         <EmailSvg width="25px" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input keyboardType={"email-address"} value={email} onChangeText={e => setEmail(e)}
+                    <Input onSubmitEditing={() => inputPass.current.focus()} returnKeyType={"next"}
+                           keyboardType={"email-address"} value={email} onChangeText={e => setEmail(e)}
                            placeholder="Email"/>
                 </InputView>
 
@@ -60,8 +62,8 @@ function Login(props) {
                     <LineDiv>
                         <Lock width="25" height="25px" fill="#DF274C"/>
                     </LineDiv>
-                    <Input value={pass} onChangeText={p => setPass(p)} secureTextEntry={securePass}
-                           placeholder="password"/>
+                    <Input ref={inputPass} value={pass} onChangeText={p => setPass(p)} secureTextEntry={securePass}
+                           placeholder="Password" onSubmitEditing={doLogin}/>
                     {securePass ?
                         <>
                             <BtnEye onPress={() => setSecurePass(false)}>

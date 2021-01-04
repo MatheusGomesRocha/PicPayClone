@@ -3,7 +3,7 @@ import firestore from '@react-native-firebase/firestore';
 import {Alert} from 'react-native';
 
 export default {
-    signUp: (name, email, cpf, birthday, pass, navigation) => {
+    signUp: (name, email, cpf, birthday, pass, navigation) => {     // RegisterScreen
         let id = Math.floor(Math.random() * (9999 - 1));
         let idString = id.toString();
         let user = '@'+name+'.'+idString;
@@ -44,7 +44,7 @@ export default {
             })
     },
 
-    login: (email, pass, navigation, setEmail, setUser, setName) => {
+    login: (email, pass, navigation, setEmail, setUser, setName) => {       // LoginScreen
         const res =
             auth()
                 .signInWithEmailAndPassword(email, pass)
@@ -70,7 +70,7 @@ export default {
             })
     },
 
-    getUserLogin: (email, setName, setUser) => {
+    getUserLogin: (email, setName, setUser) => {        // ConfigScreen
         let list = [];
 
         return firestore()

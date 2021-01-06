@@ -8,6 +8,7 @@ import UserBankScreen from '../screens/UserBankScreen';
 import UserDataScreen from '../screens/UserDataScreen';
 import UserEmailScreen from '../screens/UserEmailScreen';
 import BankAccountScreen from '../screens/BankAccountScreen';
+import AddBankAccountScreen from '../screens/AddBankAccountScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import ForgotScreen from '../screens/ForgotScreen';
 import RedefineScreen from '../screens/RedefineScreen';
@@ -47,6 +48,12 @@ export default () => {
             }}/>
             <HomeStack.Screen name="bank_account" component={BankAccountScreen} options={{
                 headerTitle: 'Bank Account',
+                headerTintColor: '#fff',
+                headerTitleAlign: 'center',
+                headerStyle: {backgroundColor: '#DF274C'}
+            }}/>
+            <HomeStack.Screen name="add_bank_account" component={AddBankAccountScreen} options={{
+                headerTitle: 'Account',
                 headerTintColor: '#fff',
                 headerTitleAlign: 'center',
                 headerStyle: {backgroundColor: '#DF274C'}

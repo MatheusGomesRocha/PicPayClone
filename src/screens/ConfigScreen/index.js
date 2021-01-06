@@ -46,10 +46,12 @@ let arrayBtn = [
 function ConfigScreen(props) {
     const [modalVisible, setModalVisible] = useState(false);
     const [userLogin, setUserLogin] = useState(false);
+    const [id, setId] = useState();
     const [user, setUser] = useState();
     const [name, setName] = useState();
 
     const navigation = useNavigation();
+
     const email = useSelector(state => state.user.email);
 
     let arrayBtnBig = [
@@ -69,7 +71,7 @@ function ConfigScreen(props) {
     }
 
     useEffect(() => {
-        Api.getUserLogin(email, setName, setUser);
+        Api.getUserLogin(email, setId, setName, setUser);
     }, [])
 
     useEffect(() => {
@@ -152,7 +154,7 @@ function ConfigScreen(props) {
                     ))}
 
                     {arrayBtn.map((item, k) => (
-                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => navigation.navigate(item.screen)}
+                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => navigation.navigate(item.screen, {userId: id})}
                                     height="60px">
                             <BtnText>{item.content}</BtnText>
                         </DefaultBtn>

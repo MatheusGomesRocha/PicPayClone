@@ -70,7 +70,7 @@ export default {
             })
     },
 
-    getUserLogin: (email, setName, setUser) => {        // ConfigScreen
+    getUserLogin: (email, setId, setName, setUser) => {        // ConfigScreen
         let list = [];
 
         return firestore()
@@ -81,6 +81,7 @@ export default {
                 querySnapshot.forEach(documentSnapshot => {
                     let data = documentSnapshot.data();
 
+                    setId(data.id)
                     setName(data.name);
                     setUser(data.user);
                 })

@@ -10,6 +10,7 @@ import Api from '../../Api';
 import {useNavigation} from '@react-navigation/native';
 
 import {DefaultText} from '../../components/DefaultText';
+import {DefaultBtn} from '../../components/DefaultBtn';
 
 import {
     Container,
@@ -21,7 +22,6 @@ import {
     InputView,
     LineDiv,
     Input,
-    DefaultBtn,
     BottomView,
     TextBtn,
 } from "./styled";

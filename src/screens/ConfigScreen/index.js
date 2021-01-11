@@ -55,7 +55,7 @@ function ConfigScreen(props) {
     const email = useSelector(state => state.user.email);
 
     let arrayBtnBig = [
-        {id: '1', content: 'Bankidô', subContent: user, screen: 'user_bank'},
+        {id: '1', content: 'Bankidô', subContent: '@'+user, screen: 'user_bank'},
         {id: '2', content: 'Personal data', subContent: 'Name, CPF e Data of birth', screen: 'user_data'},
         {id: '3', content: 'E-mail', subContent: email, screen: 'user_email'},
     ];
@@ -145,7 +145,7 @@ function ConfigScreen(props) {
 
                 <MainContent>
                     {arrayBtnBig.map((item, k) => (
-                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => navigation.navigate(item.screen)}>
+                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => navigation.navigate(item.screen, {user, userId: id})}>
                             <>
                                 <BtnText>{item.content}</BtnText>
                                 <BtnSubText>{item.subContent}</BtnSubText>
@@ -164,7 +164,7 @@ function ConfigScreen(props) {
                         <BlockText>
                             <DefaultText bolder="bold" color="#DF274C">Promotions</DefaultText>
                         </BlockText>
-                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log('olá')} height="60px">
+                        <DefaultBtn underlayColor="#ddd" onPress={() => console.log(id)} height="60px">
                             <DefaultText bolder="bold">Use promotional code</DefaultText>
                         </DefaultBtn>
                     </DefaultBlock>

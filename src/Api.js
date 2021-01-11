@@ -6,7 +6,7 @@ export default {
     signUp: (name, email, cpf, birthday, pass, navigation) => {     // RegisterScreen
         let id = Math.floor(Math.random() * (9999 - 1));
         let idString = id.toString();
-        let user = '@'+name+'.'+idString;
+        let user = name+'.'+idString;
 
         const res =
             auth()
@@ -86,5 +86,29 @@ export default {
                     setUser(data.user);
                 })
             })
+    },
+
+    updateUser: (id, newUser, navigation) => {      // UserBankScreen
+        const res =
+                 firestore().
+                    collection('users')
+                    .doc(id)
+                    .update({
+                        user: newUser
+                    }).then(() => {
+                     navigation.reset({
+                         routes: [
+                             {name: 'apptab'}
+                         ]
+                     });
+                     Alert.alert(
+                         "Success",
+                         "Update successfully",
+                         [
+                             {text: "OK"}
+                         ],
+                         {cancelable: false}
+                     );
+                 })
     }
 }

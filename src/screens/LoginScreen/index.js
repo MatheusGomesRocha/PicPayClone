@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import Api from '../../Api';
 
 import {DefaultText} from '../../components/DefaultText';
+import {DefaultBtn} from '../../components/DefaultBtn';
 
 import {
     Container,
@@ -15,7 +16,6 @@ import {
     InputView,
     LineDiv,
     Input,
-    DefaultBtn,
     BottomView,
     TextBtn,
 } from "./styled";

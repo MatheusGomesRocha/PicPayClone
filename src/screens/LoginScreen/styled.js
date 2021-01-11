@@ -35,15 +35,6 @@ export const Input = styled.TextInput`
     padding-left: 10px;
     font-size: 16px;
 `;
-export const DefaultBtn = styled.TouchableHighlight`
-    height: 55px;
-    width: 100%;
-    background-color: ${props=>props.bgColor};
-    border-radius: 30px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px;
-`;
 export const BottomView = styled.View`
     flex-direction: row;
     align-items: center;

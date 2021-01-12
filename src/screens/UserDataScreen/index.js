@@ -32,7 +32,7 @@ export default () => {
     const inputRef1 = createRef();
     const inputRef2 = createRef();
 
-
+    let cpfFormated = cpf.substr(0, 3);
 
     const setFocusInput1 = () => {
         setFocus1('#DF274C');
@@ -60,7 +60,6 @@ export default () => {
         }
     }
 
-
     return (
         <Container>
             <StatusBar barStyle="light-content" backgroundColor="#DF274C"/>
@@ -68,7 +67,7 @@ export default () => {
 
             <DivInput bbc={"#ddd"}>
                 <DefaultText color="#ccc">CPF</DefaultText>
-                <Input editable={false} style={{color: '#ddd'}} defaultValue={cpf}/>
+                <Input editable={false} style={{color: '#ddd'}} defaultValue={cpfFormated+'.***.***-**'}/>
             </DivInput>
 
             <DivInput bbc={focus1}>

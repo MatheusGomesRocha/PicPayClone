@@ -70,7 +70,7 @@ export default {
             })
     },
 
-    getUserLogin: (email, setId, setName, setUser) => {        // ConfigScreen
+    getUserLogin: (email, setId, setName, setUser, setCpf, setBirthday) => {        // ConfigScreen
         let list = [];
 
         return firestore()
@@ -84,6 +84,8 @@ export default {
                     setId(data.id)
                     setName(data.name);
                     setUser(data.user);
+                    setCpf(data.cpf);
+                    setBirthday(data.birthday);
                 })
             })
     },
@@ -110,5 +112,30 @@ export default {
                          {cancelable: false}
                      );
                  })
+    },
+
+    updateUserData: (id, newName, newBirthday, navigation) => {      // UserBankScreen
+        const res =
+            firestore().
+            collection('users')
+                .doc(id)
+                .update({
+                    name: newName,
+                    birthday: newBirthday,
+                }).then(() => {
+                navigation.reset({
+                    routes: [
+                        {name: 'apptab'}
+                    ]
+                });
+                Alert.alert(
+                    "Success",
+                    "Update successfully",
+                    [
+                        {text: "OK"}
+                    ],
+                    {cancelable: false}
+                );
+            })
     }
 }

@@ -49,13 +49,15 @@ function ConfigScreen(props) {
     const [id, setId] = useState();
     const [user, setUser] = useState();
     const [name, setName] = useState();
+    const [cpf, setCpf] = useState();
+    const [birthday, setBirthday] = useState();
 
     const navigation = useNavigation();
 
     const email = useSelector(state => state.user.email);
 
     let arrayBtnBig = [
-        {id: '1', content: 'Bankidô', subContent: '@'+user, screen: 'user_bank'},
+        {id: '1', content: 'Bankidô', subContent: '@' + user, screen: 'user_bank'},
         {id: '2', content: 'Personal data', subContent: 'Name, CPF e Data of birth', screen: 'user_data'},
         {id: '3', content: 'E-mail', subContent: email, screen: 'user_email'},
     ];
@@ -71,11 +73,11 @@ function ConfigScreen(props) {
     }
 
     useEffect(() => {
-        Api.getUserLogin(email, setId, setName, setUser);
+        Api.getUserLogin(email, setId, setName, setUser, setCpf, setBirthday);
     }, [])
 
     useEffect(() => {
-        if(email) {
+        if (email) {
             setTimeout(() => {
                 setUserLogin(true)
             }, 1000)
@@ -132,8 +134,8 @@ function ConfigScreen(props) {
                             <DefaultText font="16px" color="#aaa">{name}</DefaultText>
                         </>
                         :
-                        <ActivityIndicator style={{marginBottom: 10}} size="large" color="#000" />
-                        }
+                        <ActivityIndicator style={{marginBottom: 10}} size="large" color="#000"/>
+                    }
 
 
                     <TextBtn onPress={() => console.log('olá')}>
@@ -145,7 +147,14 @@ function ConfigScreen(props) {
 
                 <MainContent>
                     {arrayBtnBig.map((item, k) => (
-                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => navigation.navigate(item.screen, {user, userId: id})}>
+                        <DefaultBtn underlayColor="#ddd" key={k}
+                                    onPress={() => navigation.navigate(item.screen, {
+                                        user,
+                                        userId: id,
+                                        name,
+                                        cpf,
+                                        birthday
+                                    })}>
                             <>
                                 <BtnText>{item.content}</BtnText>
                                 <BtnSubText>{item.subContent}</BtnSubText>
@@ -154,7 +163,8 @@ function ConfigScreen(props) {
                     ))}
 
                     {arrayBtn.map((item, k) => (
-                        <DefaultBtn underlayColor="#ddd" key={k} onPress={() => navigation.navigate(item.screen, {userId: id})}
+                        <DefaultBtn underlayColor="#ddd" key={k}
+                                    onPress={() => navigation.navigate(item.screen, {userId: id})}
                                     height="60px">
                             <BtnText>{item.content}</BtnText>
                         </DefaultBtn>

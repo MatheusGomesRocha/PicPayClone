@@ -32,6 +32,12 @@ export default () => {
     const inputRef1 = createRef();
     const inputRef2 = createRef();
 
+    let birthdayD = birthday.substr(0, 2);
+    let birthdayM = birthday.substr(2, 2);
+    let birthdayY = birthday.substr(4, 4);
+
+    let birthdayFormated = birthdayD+'/'+birthdayM+'/'+birthdayY;
+
     const setFocusInput1 = () => {
         setFocus1('#DF274C');
         setFocus2('#aaa')
@@ -59,7 +65,7 @@ export default () => {
 
             <DivInput bbc={"#ddd"}>
                 <DefaultText color="#ccc">CPF</DefaultText>
-                <Input style={{color: '#ddd'}} defaultValue={cpf}/>
+                <Input editable={false} style={{color: '#ddd'}} defaultValue={cpf}/>
             </DivInput>
 
             <DivInput bbc={focus1}>
@@ -73,11 +79,11 @@ export default () => {
                 <DefaultText color={focus2}>Data of birth</DefaultText>
                 <Input onSubmitEditing={() => inputRef1.current.focus()} ref={inputRef2} returnKeyType={"next"}
                        keyboardType={"numeric"} onChangeText={nb => setNewBirthday(nb)} onFocus={setFocusInput2}
-                       placeholder={birthday}
+                       placeholder={birthdayFormated}
                        placeholderTextColor={"#aaa"}/>
             </DivInput>
 
-            <DefaultBtn bgColor={"#DF274C"} underlayColor="#BE1C3D" onPress={handleEdit}>
+            <DefaultBtn disabled={newName || newBirthday ? false : true} bgColor={newName || newBirthday ? '#DF274C' : '#ccc'} underlayColor="#BE1C3D" onPress={handleEdit}>
                 <DefaultText enabled={true} color="#fff" font="18px">Update</DefaultText>
             </DefaultBtn>
 

@@ -114,7 +114,7 @@ export default {
                  })
     },
 
-    updateUserData: (id, newName, newBirthday, navigation) => {      // UserBankScreen
+    updateUserData: (id, newName, newBirthday, navigation) => {      // UserDataScreen
         const res =
             firestore().
             collection('users')

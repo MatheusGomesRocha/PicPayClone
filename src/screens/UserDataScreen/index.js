@@ -32,11 +32,7 @@ export default () => {
     const inputRef1 = createRef();
     const inputRef2 = createRef();
 
-    let birthdayD = birthday.substr(0, 2);
-    let birthdayM = birthday.substr(2, 2);
-    let birthdayY = birthday.substr(4, 4);
 
-    let birthdayFormated = birthdayD+'/'+birthdayM+'/'+birthdayY;
 
     const setFocusInput1 = () => {
         setFocus1('#DF274C');
@@ -49,14 +45,21 @@ export default () => {
     }
 
     const handleEdit = () => {
+        let birthdayD = newBirthday.substr(0, 2);
+        let birthdayM = newBirthday.substr(2, 2);
+        let birthdayY = newBirthday.substr(4, 4);
+
+        const birthdayFormated = birthdayD+'/'+birthdayM+'/'+birthdayY;
+
         if (newName && newBirthday == '') {
             Api.updateUserData(id, newName, birthday, navigation);
         } else if (newBirthday && newName == '') {
-            Api.updateUserData(id, name, newBirthday, navigation);
+            Api.updateUserData(id, name, birthdayFormated, navigation);
         } else if (newBirthday + newName) {
-            Api.updateUserData(id, newName, newBirthday, navigation);
+            Api.updateUserData(id, newName, birthdayFormated, navigation);
         }
     }
+
 
     return (
         <Container>
@@ -79,7 +82,7 @@ export default () => {
                 <DefaultText color={focus2}>Data of birth</DefaultText>
                 <Input onSubmitEditing={() => inputRef1.current.focus()} ref={inputRef2} returnKeyType={"next"}
                        keyboardType={"numeric"} onChangeText={nb => setNewBirthday(nb)} onFocus={setFocusInput2}
-                       placeholder={birthdayFormated}
+                       placeholder={birthday}
                        placeholderTextColor={"#aaa"}/>
             </DivInput>
 

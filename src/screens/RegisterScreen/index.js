@@ -42,6 +42,13 @@ export default () => {
 
     const [btnDisabled, setBtnDisabled] = useState(true);
 
+    const [focus1, setFocus1] = useState(false);
+    const [focus2, setFocus2] = useState(false);
+    const [focus3, setFocus3] = useState(false);
+    const [focus4, setFocus4] = useState(false);
+    const [focus5, setFocus5] = useState(false);
+    const [focus6, setFocus6] = useState(false);
+
     const navigation = useNavigation();
 
     const inputEmail = createRef();
@@ -49,6 +56,60 @@ export default () => {
     const inputBirthday = createRef();
     const inputPass = createRef();
     const inputConfirmPass = createRef();
+
+    const setInputFocus1 = () => {
+        setFocus1(true);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(false);
+    }
+
+    const setInputFocus2 = () => {
+        setFocus1(false);
+        setFocus2(true);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(false);
+    }
+
+    const setInputFocus3 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(true);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(false);
+    }
+
+    const setInputFocus4 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(true);
+        setFocus5(false);
+        setFocus6(false);
+    }
+
+    const setInputFocus5 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(true);
+        setFocus6(false);
+    }
+
+    const setInputFocus6 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(true);
+    }
 
     const createAccount = () => {
         Api.signUp(name, email, cpf, birthday, pass, navigation);
@@ -69,49 +130,51 @@ export default () => {
                         </DefaultText>
                     </TopView>
 
-                    <InputView>
-                        <LineDiv>
-                            <UserSvg width="25px" height="25px" fill="#DF274C"/>
+                    <InputView bc={focus1 ? '#DF274C' : '#ccc'}>
+                        <LineDiv brc={focus1 ? '#DF274C' : '#ccc'}>
+                            <UserSvg width="25px" height="25px" fill={focus1 ? '#DF274C' : '#ccc'}/>
                         </LineDiv>
                         <Input returnKeyType={"next"} onSubmitEditing={() => inputEmail.current.focus()} value={name}
-                               onChangeText={n => setName(n)} placeholder="Your name"/>
+                               onChangeText={n => setName(n)} placeholder="Your name" onFocus={setInputFocus1}/>
                     </InputView>
 
-                    <InputView>
-                        <LineDiv>
-                            <EmailSvg width="25px" height="25px" fill="#DF274C"/>
+                    <InputView bc={focus2 ? '#DF274C' : '#ccc'}>
+                        <LineDiv brc={focus2 ? '#DF274C' : '#ccc'}>
+                            <EmailSvg width="25px" height="25px" fill={focus2 ? '#DF274C' : '#ccc'}/>
                         </LineDiv>
                         <Input returnKeyType={"next"} onSubmitEditing={() => inputCpf.current.focus()} ref={inputEmail}
-                               keyboardType={"email-address"} value={email} onChangeText={e => setEmail(e)}
+                               keyboardType={"email-address"} value={email}
+                               onChangeText={e => setEmail(e)} onFocus={setInputFocus2}
                                placeholder="E-mail"/>
                     </InputView>
 
-                    <InputView>
-                        <LineDiv>
-                            <Id width="25px" height="25px" fill="#DF274C"/>
+                    <InputView bc={focus3 ? '#DF274C' : '#ccc'}>
+                        <LineDiv brc={focus3 ? '#DF274C' : '#ccc'}>
+                            <Id width="25px" height="25px" fill={focus3 ? '#DF274C' : '#ccc'}/>
                         </LineDiv>
                         <Input returnKeyType={"next"} onSubmitEditing={() => inputBirthday.current.focus()}
                                ref={inputCpf} keyboardType={"numeric"} value={cpf} onChangeText={c => setCpf(c)}
+                               onFocus={setInputFocus3}
                                placeholder="CPF"/>
                     </InputView>
 
-                    <InputView>
-                        <LineDiv>
-                            <Birthday width="25px" height="25px" fill="#DF274C"/>
+                    <InputView bc={focus4 ? '#DF274C' : '#ccc'}>
+                        <LineDiv brc={focus4 ? '#DF274C' : '#ccc'}>
+                            <Birthday width="25px" height="25px" fill={focus4 ? '#DF274C' : '#ccc'}/>
                         </LineDiv>
                         <Input returnKeyType={"next"} onSubmitEditing={() => inputPass.current.focus()}
                                ref={inputBirthday} keyboardType={"numeric"} value={birthday}
                                onChangeText={b => setBirthday(b)}
-                               placeholder="Date of Birth"/>
+                               placeholder="Date of Birth" onFocus={setInputFocus4}/>
                     </InputView>
 
-                    <InputView>
-                        <LineDiv>
-                            <Lock width="25px" height="25px" fill="#DF274C"/>
+                    <InputView bc={focus5 ? '#DF274C' : '#ccc'}>
+                        <LineDiv brc={focus5 ? '#DF274C' : '#ccc'}>
+                            <Lock width="25px" height="25px" fill={focus5 ? '#DF274C' : '#ccc'}/>
                         </LineDiv>
                         <Input returnKeyType={"next"} onSubmitEditing={() => inputConfirmPass.current.focus()}
                                ref={inputPass} value={pass} onChangeText={p => setPass(p)} secureTextEntry={securePass}
-                               placeholder="Password (7+ caracters)"/>
+                               placeholder="Password (7+ caracters)" onFocus={setInputFocus5}/>
                         {securePass ?
                             <>
                                 <BtnEye onPress={() => setSecurePass(false)}>
@@ -127,12 +190,12 @@ export default () => {
                         }
                     </InputView>
 
-                    <InputView>
-                        <LineDiv>
-                            <Lock width="25px" height="25px" fill="#DF274C"/>
+                    <InputView bc={focus6 ? '#DF274C' : '#ccc'}>
+                        <LineDiv brc={focus6 ? '#DF274C' : '#ccc'}>
+                            <Lock width="25px" height="25px" fill={focus6 ? '#DF274C' : '#ccc'}/>
                         </LineDiv>
                         <Input value={confirmPass} onChangeText={cp => setConfirmPass(cp)} secureTextEntry={securePass1}
-                               placeholder="Confirm password" ref={inputConfirmPass}/>
+                               placeholder="Confirm password" ref={inputConfirmPass} onFocus={setInputFocus6}/>
                         {securePass1 ?
                             <>
                                 <BtnEye onPress={() => setSecurePass1(false)}>

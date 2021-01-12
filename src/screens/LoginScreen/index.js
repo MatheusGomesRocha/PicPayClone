@@ -30,9 +30,22 @@ function Login(props) {
     const [email, setEmail] = useState();
     const [pass, setPass] = useState();
 
+    const [focus1, setFocus1] = useState(false);
+    const [focus2, setFocus2] = useState(false);
+
     const inputPass = createRef();
 
     const navigation = useNavigation();
+
+    const setInputFocus1 = () => {
+        setFocus1(true);
+        setFocus2(false);
+    }
+
+    const setInputFocus2 = () => {
+        setFocus1(false);
+        setFocus2(true);
+    }
 
     const doLogin = () => {
         Api.login(email, pass, navigation, props.setEmail);
@@ -49,21 +62,22 @@ function Login(props) {
                         Do not worry, your data are safe with us
                     </DefaultText>
                 </TopView>
-                <InputView>
-                    <LineDiv>
-                        <EmailSvg width="25px" height="25px" fill="#DF274C"/>
+
+                <InputView bc={focus1 ? '#DF274C' : '#ccc'}>
+                    <LineDiv brc={focus1 ? '#DF274C' : '#ccc'}>
+                        <EmailSvg width="25px" height="25px" fill={focus1 ? '#DF274C' : '#ccc'}/>
                     </LineDiv>
                     <Input onSubmitEditing={() => inputPass.current.focus()} returnKeyType={"next"}
                            keyboardType={"email-address"} value={email} onChangeText={e => setEmail(e)}
-                           placeholder="Email"/>
+                           placeholder="Email" onFocus={setInputFocus1}/>
                 </InputView>
 
-                <InputView>
-                    <LineDiv>
-                        <Lock width="25" height="25px" fill="#DF274C"/>
+                <InputView bc={focus2 ? '#DF274C' : '#ccc'}>
+                    <LineDiv brc={focus2 ? '#DF274C' : '#ccc'}>
+                        <Lock width="25" height="25px" fill={focus2 ? '#DF274C' : '#ccc'}/>
                     </LineDiv>
                     <Input ref={inputPass} value={pass} onChangeText={p => setPass(p)} secureTextEntry={securePass}
-                           placeholder="Password" onSubmitEditing={doLogin}/>
+                           placeholder="Password" onFocus={setInputFocus2} onSubmitEditing={doLogin}/>
                     {securePass ?
                         <>
                             <BtnEye onPress={() => setSecurePass(false)}>

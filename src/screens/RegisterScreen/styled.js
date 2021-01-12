@@ -21,7 +21,8 @@ export const TopView = styled.View`
 export const InputView = styled.View`
     height: 55px;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid;
+    border-color: ${props=>props.bc};
     border-radius: 10px;
     flex-direction: row;
     align-items: center;
@@ -31,7 +32,7 @@ export const InputView = styled.View`
 export const LineDiv = styled.View`
     padding: 0 15px 0 0;
     borderRightWidth: 1px;
-    borderRightColor: #aaa;
+    borderRightColor: ${props=>props.brc};
 `;
 export const Input = styled.TextInput`
     flex: 1;

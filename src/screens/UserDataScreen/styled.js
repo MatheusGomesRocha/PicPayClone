@@ -9,20 +9,10 @@ export const Container = styled.SafeAreaView`
 
 export const DivInput = styled.View`
     borderBottomWidth: 1px;
-    borderBottomColor: #aaa;
+    borderBottomColor: ${props=>props.bbc};
     width: 100%;
     margin-top: 20px;
 `;
 export const Input = styled.TextInput`
     font-size: 16px;
-`;
-
-export const DefaultBtn = styled.TouchableHighlight`
-    margin-top: 30px;
-    background-color: #DF274C;
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    align-items: center;
-    justify-content: center;
 `;

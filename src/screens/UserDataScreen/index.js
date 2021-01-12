@@ -1,38 +1,52 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-import { DefaultText } from '../../components/DefaultText';
+import {DefaultText} from '../../components/DefaultText';
+import {DefaultBtn} from '../../components/DefaultBtn';
 
-import { StatusBar } from 'react-native';
+import {StatusBar} from 'react-native';
 
 import {
     Container,
 
     DivInput,
     Input,
-    DefaultBtn,
 } from './styled';
 
 export default () => {
+    const [focus1, setFocus1] = useState('#aaa');
+    const [focus2, setFocus2] = useState('#aaa');
+
+    const setFocusInput1 = () => {
+        setFocus1('#DF274C');
+        setFocus2('#aaa')
+    }
+
+    const setFocusInput2 = () => {
+        setFocus2('#DF274C');
+        setFocus1('#aaa')
+    }
+
     return (
         <Container>
-            <StatusBar barStyle="light-content" backgroundColor="#DF274C" />
+            <StatusBar barStyle="light-content" backgroundColor="#DF274C"/>
 
-            <DivInput>
-                <DefaultText color="#ccc">Name</DefaultText>
-                <Input defaultValue="Matheus Gomes" />
-            </DivInput>
 
-            <DivInput>
+            <DivInput bbc={"#ddd"}>
                 <DefaultText color="#ccc">CPF</DefaultText>
-                <Input defaultValue="063.***.***-**" />
+                <Input style={{color: '#ddd'}} defaultValue="063.***.***-**"/>
             </DivInput>
 
-            <DivInput>
-                <DefaultText color="#ccc">Data of birth</DefaultText>
-                <Input defaultValue="02/04/2001" />
+            <DivInput bbc={focus1}>
+                <DefaultText color={focus1}>Name</DefaultText>
+                <Input onFocus={setFocusInput1} defaultValue="Matheus Gomes"/>
             </DivInput>
 
-            <DefaultBtn underlayColor="#BE1C3D" onPress={() => HandleEdit()}>
+            <DivInput bbc={focus2}>
+                <DefaultText color={focus2}>Data of birth</DefaultText>
+                <Input onFocus={setFocusInput2} defaultValue="02/04/2001"/>
+            </DivInput>
+
+            <DefaultBtn bgColor={"#DF274C"} underlayColor="#BE1C3D" onPress={() => HandleEdit()}>
                 <DefaultText enabled={true} color="#fff" font="18px">Update</DefaultText>
             </DefaultBtn>
 

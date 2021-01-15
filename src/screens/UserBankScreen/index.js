@@ -23,7 +23,7 @@ export default () => {
     const user = route.params.user.toLowerCase();
     const id = route.params.userId;
 
-    const HandleEdit = () => {
+    const handleEdit = () => {
         Api.updateUser(id, newUser, navigation);
     }
 
@@ -40,7 +40,7 @@ export default () => {
                 Always that you get paid by someone, show them this user. It's with this, that you'll be found
             </DefaultText>
 
-            <DefaultBtn disabled={newUser ? false : true} bgColor={newUser ? '#DF274C' : '#ccc'} underlayColor="#BE1C3D" onPress={() => HandleEdit()}>
+            <DefaultBtn disabled={newUser ? false : true} bgColor={newUser ? '#DF274C' : '#ccc'} underlayColor="#BE1C3D" onPress={handleEdit}>
                 <DefaultText enabled={true} color="#fff" font="18px">Update</DefaultText>
             </DefaultBtn>
         </Container>

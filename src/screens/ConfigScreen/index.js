@@ -153,7 +153,8 @@ function ConfigScreen(props) {
                                         userId: id,
                                         name,
                                         cpf,
-                                        birthday
+                                        birthday,
+                                        email
                                     })}>
                             <>
                                 <BtnText>{item.content}</BtnText>

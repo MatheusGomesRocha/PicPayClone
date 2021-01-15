@@ -34,7 +34,7 @@ export default {
                 if(error.code == 'auth/email-already-in-use') {
                     Alert.alert(
                         'Error',
-                        "Este email já está cadastro, tente outro",
+                        "Email already in use",
                         [
                             {text: 'OK'}
                         ],
@@ -136,6 +136,41 @@ export default {
                     ],
                     {cancelable: false}
                 );
+            })
+    },
+
+    updateEmail: (id, email, navigation) => {      // UserDataScreen
+        const res =
+            firestore().
+            collection('users')
+                .doc(id)
+                .update({
+                    email: email,
+                }).then(() => {
+                navigation.reset({
+                    routes: [
+                        {name: 'apptab'}
+                    ]
+                });
+                Alert.alert(
+                    "Success",
+                    "Update successfully",
+                    [
+                        {text: "OK"}
+                    ],
+                    {cancelable: false}
+                );
+            }).catch(error => {
+                if(error) {
+                    Alert.alert(
+                        'Error',
+                        'Email type invalid',
+                        [
+                            {text: 'OK'}
+                        ],
+                        {cancelable: false}
+                    );
+                }
             })
     }
 }

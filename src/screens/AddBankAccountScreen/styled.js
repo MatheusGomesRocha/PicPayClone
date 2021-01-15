@@ -9,7 +9,7 @@ export const Scroll = styled.ScrollView``;
 
 export const Input = styled.TextInput`
     width: ${props=>props.width || '100%'};
-    borderBottomColor: #000;
+    borderBottomColor: ${props=>props.bc || '#ccc'};
     borderBottomWidth: 1px;
     margin-top: ${props=>props.mTop || '20px'};
     margin-bottom: ${props=>props.mBottom || '0'};

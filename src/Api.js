@@ -6,7 +6,7 @@ export default {
     signUp: (name, email, cpf, birthday, pass, navigation) => {     // RegisterScreen
         let id = Math.floor(Math.random() * (9999 - 1));
         let idString = id.toString();
-        let user = name+'.'+idString;
+        let user = name + '.' + idString;
 
         const res =
             auth()
@@ -31,7 +31,7 @@ export default {
                         ]
                     })
                 }).catch(error => {
-                if(error.code == 'auth/email-already-in-use') {
+                if (error.code == 'auth/email-already-in-use') {
                     Alert.alert(
                         'Error',
                         "Email already in use",
@@ -57,16 +57,16 @@ export default {
 
                     setEmail(email)
                 }).catch(error => {
-                    if(error) {
-                        Alert.alert(
-                            'Error',
-                            'Email ou senha incorretas',
-                            [
-                                {text: 'OK'}
-                            ],
-                            {cancelable: false}
-                        );
-                    }
+                if (error) {
+                    Alert.alert(
+                        'Error',
+                        'Email ou senha incorretas',
+                        [
+                            {text: 'OK'}
+                        ],
+                        {cancelable: false}
+                    );
+                }
             })
     },
 
@@ -92,32 +92,30 @@ export default {
 
     updateUser: (id, newUser, navigation) => {      // UserBankScreen
         const res =
-                 firestore().
-                    collection('users')
-                    .doc(id)
-                    .update({
-                        user: newUser
-                    }).then(() => {
-                     navigation.reset({
-                         routes: [
-                             {name: 'apptab'}
-                         ]
-                     });
-                     Alert.alert(
-                         "Success",
-                         "Update successfully",
-                         [
-                             {text: "OK"}
-                         ],
-                         {cancelable: false}
-                     );
-                 })
+            firestore().collection('users')
+                .doc(id)
+                .update({
+                    user: newUser
+                }).then(() => {
+                navigation.reset({
+                    routes: [
+                        {name: 'apptab'}
+                    ]
+                });
+                Alert.alert(
+                    "Success",
+                    "Update successfully",
+                    [
+                        {text: "OK"}
+                    ],
+                    {cancelable: false}
+                );
+            })
     },
 
     updateUserData: (id, newName, newBirthday, navigation) => {      // UserDataScreen
         const res =
-            firestore().
-            collection('users')
+            firestore().collection('users')
                 .doc(id)
                 .update({
                     name: newName,
@@ -139,10 +137,9 @@ export default {
             })
     },
 
-    updateEmail: (id, email, navigation) => {      // UserDataScreen
+    updateEmail: (id, email, navigation) => {      // UserEmailScreen
         const res =
-            firestore().
-            collection('users')
+            firestore().collection('users')
                 .doc(id)
                 .update({
                     email: email,
@@ -160,17 +157,38 @@ export default {
                     ],
                     {cancelable: false}
                 );
-            }).catch(error => {
-                if(error) {
-                    Alert.alert(
-                        'Error',
-                        'Email type invalid',
-                        [
-                            {text: 'OK'}
-                        ],
-                        {cancelable: false}
-                    );
-                }
-            })
+            });
+    },
+
+    addBankAccount: (userId, account, agency, digit, type, bank, navigation) => {
+        let id = Math.floor(Math.random() * (9999 - 1));
+        let idString = id.toString();
+
+        firestore()
+            .collection('bank_account')
+            .doc(userId)
+            .set({
+                id: id,
+                userId: userId,
+                account: account,
+                agency: agency,
+                digit: digit,
+                type: type,
+                bank: bank,
+            }).then(() => {
+            navigation.reset({
+                routes: [
+                    {name: 'apptab'}
+                ]
+            });
+            Alert.alert(
+                "Success",
+                "Update successfully",
+                [
+                    {text: "OK"}
+                ],
+                {cancelable: false}
+            );
+        })
     }
 }

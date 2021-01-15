@@ -1,5 +1,5 @@
 import React, {useState, createRef} from 'react';
-import Teste from '../../assets/svg/search.svg';
+import Check from '../../assets/svg/check.svg';
 import Lock from '../../assets/svg/lock.svg';
 
 import {DefaultText} from '../../components/DefaultText';
@@ -25,6 +25,14 @@ export default () => {
     const [ownerName, setOwnerName] = useState();
     const [ownerCpf, setOwnerCpf] = useState();
 
+    const [focus1, setFocus1] = useState(false);
+    const [focus2, setFocus2] = useState(false);
+    const [focus3, setFocus3] = useState(false);
+    const [focus4, setFocus4] = useState(false);
+    const [focus5, setFocus5] = useState(false);
+    const [focus6, setFocus6] = useState(false);
+    const [focus7, setFocus7] = useState(false);
+
     const [notMyAccount, setNotMyAccount] = useState(false);
 
     const agencyRef = createRef();
@@ -33,30 +41,103 @@ export default () => {
     const bankRef = createRef();
     const cpfRef = createRef();
 
+    const setInputFocus1 = () => {
+        setFocus1(true);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(false);
+        setFocus7(false);
+    }
+
+    const setInputFocus2 = () => {
+        setFocus1(false);
+        setFocus2(true);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(false);
+        setFocus7(false);
+    }
+
+    const setInputFocus3 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(true);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(false);
+        setFocus7(false);
+    }
+
+    const setInputFocus4 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(true);
+        setFocus5(false);
+        setFocus6(false);
+        setFocus7(false);
+    }
+
+    const setInputFocus5 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(true);
+        setFocus6(false);
+        setFocus7(false);
+    }
+
+    const setInputFocus6 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(true);
+        setFocus7(false);
+    }
+
+    const setInputFocus7 = () => {
+        setFocus1(false);
+        setFocus2(false);
+        setFocus3(false);
+        setFocus4(false);
+        setFocus5(false);
+        setFocus6(false);
+        setFocus7(true);
+    }
+
     return (
         <Container>
-            <Scroll>
+            <Scroll showsVerticalScrollIndicator={false}>
                 <DefaultText mTop={"15px"} font={"16px"} color={"#aaa"}>
                     To transfer money from Bankidô to your bank account, you need to register a account first
                 </DefaultText>
 
-                <Input onChangeText={(an => setAccountNumber(an))} returnKeyType={"next"}
+                <Input bc={focus1 ? '#DF274C' : '#ccc'} onChangeText={(an => setAccountNumber(an))}
+                       returnKeyType={"next"}
                        onSubmitEditing={() => agencyRef.current.focus()}
-                       placeholder={"Account number"}/>
+                       placeholder={"Account number"} onFocus={setInputFocus1}/>
 
                 <DivInputRow>
-                    <Input onChangeText={(agn => setAgencyNumber(agn))} returnKeyType={"next"}
+                    <Input bc={focus2 ? '#DF274C' : '#ccc'} onChangeText={(agn => setAgencyNumber(agn))}
+                           returnKeyType={"next"}
                            onSubmitEditing={() => digitRef.current.focus()} ref={agencyRef}
-                           width={"70%"} placeholder={"Agency number"}/>
-                    <Input onChangeText={(d => setDigit(d))} returnKeyType={"next"}
+                           width={"70%"} placeholder={"Agency number"} onFocus={setInputFocus2}/>
+                    <Input bc={focus3 ? '#DF274C' : '#ccc'} onChangeText={(d => setDigit(d))} returnKeyType={"next"}
                            onSubmitEditing={() => typeRef.current.focus()} ref={digitRef}
-                           width={"25%"} placeholder={"Digit"}/>
+                           width={"25%"} placeholder={"Digit"} onFocus={setInputFocus3}/>
                 </DivInputRow>
 
-                <Input onChangeText={(t => setType(t))} returnKeyType={"next"}
+                <Input bc={focus4 ? '#DF274C' : '#ccc'} onChangeText={(t => setType(t))} returnKeyType={"next"}
                        onSubmitEditing={() => bankRef.current.focus()} ref={typeRef}
-                       placeholder={"Account type"}/>
-                <Input onChangeText={(b => setBank(b))} ref={bankRef} placeholder={"Bank"}/>
+                       placeholder={"Account type"} onFocus={setInputFocus4}/>
+                <Input bc={focus5 ? '#DF274C' : '#ccc'} onChangeText={(b => setBank(b))} ref={bankRef}
+                       placeholder={"Bank"} onFocus={setInputFocus5}/>
 
                 <DefaultView>
 
@@ -64,18 +145,20 @@ export default () => {
                         <DefaultText>This bank account isn't mine</DefaultText>
                         <SquareBtn onPress={() => setNotMyAccount(!notMyAccount)}>
                             {notMyAccount &&
-                            <Teste width={20} height={20} fill={"#000"}/>
+                            <Check width={20} height={20} fill={"#000"}/>
                             }
                         </SquareBtn>
                     </DefaultViewRow>
 
                     {notMyAccount &&
                     <>
-                        <Input onChangeText={(on => setOwnerName(on))} returnKeyType={"next"}
-                               onSubmitEditing={() => cpfRef.current.focus()}
+                        <Input bc={focus6 ? '#DF274C' : '#ccc'} onChangeText={(on => setOwnerName(on))}
+                               returnKeyType={"next"}
+                               onSubmitEditing={() => cpfRef.current.focus()} onFocus={setInputFocus6}
                                placeholder={"Account Owner name"} mTop={"10px"}/>
-                        <Input onChangeText={(oc => setOwnerCpf(oc))} ref={cpfRef} placeholder={"Owner CPF"}
-                               mBottom={"10px"} mTop={"10px"}/>
+                        <Input bc={focus7 ? '#DF274C' : '#ccc'} onChangeText={(oc => setOwnerCpf(oc))} ref={cpfRef}
+                               placeholder={"Owner CPF"}
+                               mBottom={"10px"} mTop={"10px"} onFocus={setInputFocus7}/>
                     </>
                     }
                 </DefaultView>
@@ -85,9 +168,10 @@ export default () => {
                 </DefaultBtn>
 
                 <DefaultViewRow>
-                    <Lock width={50} height={50} fill={"#bbb"} />
+                    <Lock width={50} height={50} fill={"#bbb"}/>
                     <DefaultText style={{width: '80%'}} mTop={"15px"} color={"#bbb"}>
-                        Bankidô it's 100% safe. this data will only be used when you do a transfer from Bankidô to other bank
+                        Bankidô it's 100% safe. this data will only be used when you do a transfer from Bankidô to other
+                        bank
                     </DefaultText>
                 </DefaultViewRow>
 

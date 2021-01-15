@@ -85,7 +85,8 @@ export default () => {
                        placeholderTextColor={"#aaa"}/>
             </DivInput>
 
-            <DefaultBtn disabled={newName || newBirthday ? false : true} bgColor={newName || newBirthday ? '#DF274C' : '#ccc'} underlayColor="#BE1C3D" onPress={handleEdit}>
+            <DefaultBtn disabled={newName || newBirthday ? false : true} bgColor={newName || newBirthday ? '#DF274C' : '#ccc'}
+                        underlayColor="#BE1C3D" onPress={handleEdit}>
                 <DefaultText enabled={true} color="#fff" font="18px">Update</DefaultText>
             </DefaultBtn>
 

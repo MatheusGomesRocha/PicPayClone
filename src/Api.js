@@ -160,7 +160,7 @@ export default {
             });
     },
 
-    addBankAccount: (userId, account, agency, digit, type, bank, navigation) => {
+    addBankAccount: (userId, account, agency, digit, type, bank, navigation) => {   //AddBankAccountScreen
         let id = Math.floor(Math.random() * (9999 - 1));
         let idString = id.toString();
 
@@ -168,7 +168,7 @@ export default {
             .collection('bank_account')
             .doc(userId)
             .set({
-                id: id,
+                id: idString,
                 userId: userId,
                 account: account,
                 agency: agency,
@@ -183,7 +183,7 @@ export default {
             });
             Alert.alert(
                 "Success",
-                "Update successfully",
+                "Account added successfully",
                 [
                     {text: "OK"}
                 ],

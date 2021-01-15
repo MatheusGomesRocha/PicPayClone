@@ -1,8 +1,12 @@
 import React, {useState, createRef} from 'react';
 import Check from '../../assets/svg/check.svg';
 import Lock from '../../assets/svg/lock.svg';
+import Api from '../../Api';
+
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 import {DefaultText} from '../../components/DefaultText';
+import {DefaultBtn} from '../../components/DefaultBtn';
 
 import {
     Container,
@@ -13,7 +17,6 @@ import {
     DefaultView,
     DefaultViewRow,
     SquareBtn,
-    DefaultBtn
 } from './styled';
 
 export default () => {
@@ -40,6 +43,11 @@ export default () => {
     const typeRef = createRef();
     const bankRef = createRef();
     const cpfRef = createRef();
+
+    const navigation = useNavigation();
+    const route = useRoute();
+
+    const id = route.params.userId;
 
     const setInputFocus1 = () => {
         setFocus1(true);
@@ -110,6 +118,10 @@ export default () => {
         setFocus6(false);
         setFocus7(true);
     }
+    
+    const handleAdd = () => {
+        Api.addBankAccount(id, accountNumber, agencyNumber, digit, type, bank, navigation)
+    }
 
     return (
         <Container>
@@ -163,8 +175,8 @@ export default () => {
                     }
                 </DefaultView>
 
-                <DefaultBtn>
-                    <DefaultText color={"#fff"} font={"16px"}>Save</DefaultText>
+                <DefaultBtn onPress={handleAdd} underlayColor="#BE1C3D">
+                    <DefaultText color={"#fff"} font={"18px"}>Save</DefaultText>
                 </DefaultBtn>
 
                 <DefaultViewRow>

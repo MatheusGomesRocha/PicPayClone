@@ -46,7 +46,7 @@ export default () => {
                 </CenterView>
             </AccountView>
 
-            <DefaultBtn onPress={() => navigation.navigate('add_bank_account')} bgColor="#DF274C" underlayColor="#BE1C3D">
+            <DefaultBtn onPress={() => navigation.navigate('add_bank_account', {userId: userId})} bgColor="#DF274C" underlayColor="#BE1C3D">
                 <DefaultText color="#fff">{account ? 'Change' : 'Add'} bank account</DefaultText>
             </DefaultBtn>
 

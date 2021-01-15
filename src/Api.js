@@ -160,6 +160,24 @@ export default {
             });
     },
 
+    getBankAccount: (userId, setAccount, setAgency, setDigit, setBank) => {        //BankAccountScreen
+        let list = [];
+
+        firestore()
+            .collection('bank_account')
+            .doc(userId)
+            .onSnapshot((result) => {
+                if (result.exists) {
+                    let data = result.data();
+
+                    setAccount(data.account);
+                    setAgency(data.agency);
+                    setDigit(data.digit);
+                    setBank(data.bank);
+                }
+            })
+    },
+
     addBankAccount: (userId, account, agency, digit, type, bank, navigation) => {   //AddBankAccountScreen
         let id = Math.floor(Math.random() * (9999 - 1));
         let idString = id.toString();

@@ -120,7 +120,11 @@ export default () => {
     }
     
     const handleAdd = () => {
-        Api.addBankAccount(id, accountNumber, agencyNumber, digit, type, bank, navigation)
+        if(notMyAccount) {
+            Api.addBankAccount(id, accountNumber, agencyNumber, digit, type, bank, ownerName, ownerCpf, navigation);
+        } else {
+            Api.addBankAccount(id, accountNumber, agencyNumber, digit, type, bank, null, null, navigation);
+        }
     }
 
     return (
@@ -175,7 +179,7 @@ export default () => {
                     }
                 </DefaultView>
 
-                <DefaultBtn onPress={handleAdd} underlayColor="#BE1C3D">
+                <DefaultBtn disabled={accountNumber && agencyNumber && digit && type && bank ? false : true} bgColor={accountNumber && agencyNumber && digit && type && bank ? '#DF274C' : '#ccc'} onPress={handleAdd} underlayColor="#BE1C3D">
                     <DefaultText color={"#fff"} font={"18px"}>Save</DefaultText>
                 </DefaultBtn>
 
